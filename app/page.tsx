@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: "Battleship",
-    description: "A fully-featured C++ Battleship game with binary file save/load, BFS-based ship detection, and a custom game engine. Built as an assignment in my Introduction to Programming and Methodology course.",
+    description: "A fully-featured C++ Battleship game with binary file save/load, BFS-based ship detection, all with a hand-made game loop.",
     tags: ["C++", "File I/O", "BFS"],
     link: null,
   },

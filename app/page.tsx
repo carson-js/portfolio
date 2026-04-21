@@ -1,65 +1,139 @@
-import Image from "next/image";
+const projects = [
+  {
+    title: "Curb",
+    description: "A car management app for tracking maintenance, costs, and vehicle info. Built with SwiftUI and SwiftData.",
+    tags: ["SwiftUI", "Swift", "SwiftData", "iOS"],
+    link: "/curb",
+  },
+  {
+    title: "Plannerific",
+    description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
+    tags: ["SwiftUI", "iOS"],
+    link: null,
+  },
+  {
+    title: "Battleship",
+    description: "A fully-featured C++ Battleship game with binary file save/load, BFS-based ship detection, and a custom game engine. Built as an assignment in my Introduction to Programming and Methodology course.",
+    tags: ["C++", "File I/O", "BFS"],
+    link: null,
+  },
+]
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
+      <section className="max-w-3xl mx-auto px-6 pt-32 pb-20">
+        <p className="text-sm text-zinc-500 mb-3">Computer Engineering @ SJSU</p>
+        <h1 className="text-5xl font-bold tracking-tight mb-4">
+          Hi, I'm Carson 🌊
+        </h1>
+        <p className="text-lg text-zinc-500 dark:text-zinc-400 max-w-lg mb-8">
+          I build iOS apps and am currently digging into systems-level programming with C and C++.
+          Currently a freshman with a focus on making things that actually work well.
+        </p>
+        <div className="flex gap-4">
+          <a
+            href="#projects"
+            className="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-sm font-medium hover:opacity-80 transition-opacity"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              View projects
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#contact"
+              className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              Contact me
+            </a>
+        </div>
+      </section>
+      <section id="about" className="max-w-3xl mx-auto px-6 py-20 border-t boarder-zinc-100 dark:boarder-zinc-800">
+        <p className="text-sm text-zinc-500 mb-3">About</p>
+        <h2 className="text-3xl font-bold tracking-tight mb-6">A bit about me</h2>
+        <div className="flex flex-col gap-4 text-zinc-600 dark:text-zinc-400 max-w-lg">
+          <p>
+            I'm a Computer Engineering student at San Jose State University,
+            expected to graduate in May 2029. I carry a 4.0 GPA and am part of
+            the Software and Computer Engineering Society and the Responsible
+            Computing Club.
+          </p>
+          <p>
+            I like understanding how things work under the hood. I'd rather
+            build and compile things manually than let an IDE do it for me.
+            Outside of class, I'm building iOS apps with SwiftUI and working
+            through systems programming, learning both C and C++.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+      <section id="projects" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
+        <p className="text-sm text-zinc-500 mb-3">Projects</p>
+        <h2 className="text-3xl font-bold tracking-tight mb-8">Things I've built</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {projects.map((project) => {
+            const Card = (
+              <div
+                key={project.title}
+                className="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col gap-2 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
+              >
+                <h3 className="font-semibold text-lg">{project.title}</h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 flex-1">{project.description}</p>
+                <div className="flex gap-2 flex-wrap mt-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+
+            return project.link ? (
+              <a key={project.title} href={project.link} className="group">
+                {Card}
+              </a>
+            ) : (
+              <div key={project.title}>{Card}</div>
+            );
+          })}
+        </div>
+      </section>
+      <section id="contact" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
+        <p className="text-sm text-zinc-500 mb-3">Contact</p>
+        <h2 className="text-3xl font-bold tracking-tight mb-4">Get in touch</h2>
+        <p className="text-zinc-500 dark:text-zinc-400 max-w-md mb-8">
+          I'm always open to chatting about projects, opportunities, or just cool tech.
+          The best way to reach me is by email.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="mailto:me@carsonjs.me"
+          className="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-sm font-medium hover:opacity-80 transition-opacity w-fit"
+          >
+            me@carsonjs.me
+          </a> 
+          <a
+            href="https://www.github.com/carson-js"
             target="_blank"
             rel="noopener noreferrer"
+            className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg0zinc-900 transition-colors w-fit"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            GitHub
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.linkedin.com/in/carson-js"
             target="_blank"
             rel="noopener noreferrer"
+            className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg0zinc-900 transition-colors w-fit"
           >
-            Documentation
+            LinkedIn
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+      <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-zinc-100 dark:border-zinc-800">
+        <p className="text-sm text-zinc-400">© 2026 Carson. Built with Next.js and Tailwind.</p>
+      </footer>
+    </main>
   );
 }

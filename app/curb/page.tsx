@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Curb — Your Garage, Digitized.",
+  description: "A clean, private way to track maintenance, fuel, and efficiency. No ads, no tracking, just utility.",
+};
+
 export default function Curb() {
   return (
     <main style={{ fontFamily: "'Georgia', serif" }} className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">

@@ -250,6 +250,33 @@ export default function Curb() {
 
       {/* Footer */}
       <footer className="border-t border-zinc-200 dark:border-zinc-800 py-12">
+
+        {/* Fine Print */}
+        <div className="max-w-5xl mx-auto px-6 mb-8 text-xs text-zinc-400 leading-relaxed space-y-1" style={{ fontFamily: "system-ui" }}>
+          <p>Photo Credits</p>
+          <ul className="flex flex-col gap-1">
+            <li>
+              <a href="https://unsplash.com/photos/silver-mercedes-benz-coupe-on-road-during-daytime-dlqYkIlDa3k" className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
+                Porsche 911 - Martin Katler on Unsplash
+              </a>
+            </li>
+            <li>
+              <a href="https://unsplash.com/photos/a-blue-and-white-motorcycle-parked-in-a-parking-lot-hrW7-73lL0Y" className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
+                Suzuki GSX-600R - Faiz (just_faaizz_) on Unsplash
+              </a>
+            </li>
+            <li>
+              <a href="https://unsplash.com/photos/a-tesla-electric-car-charging-at-a-charging-station-W8IvFdsKsl8" className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
+                Tesla Model 3 - Bram Van Oost on Unsplash
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 mb-8 text-xs text-zinc-400 leading-relaxed space-y-1" style={{ fontFamily: "system-ui" }}>
+          <p>Advanced receipt scanning accuracy requires a device compatible with Apple Intelligence running iOS 26 or later. Apple Intelligence is available on iPhone 16 and later, and iPhone 15 Pro models, with iOS 18.1 or later.</p>
+        </div>
+
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose.</p>
           <div className="flex gap-6">

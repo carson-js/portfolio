@@ -32,7 +32,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <section className="max-w-3xl mx-auto px-6 pt-32 pb-20">
+      <section className="max-w-3xl mx-auto px-6 pt-24 pb-20">
         <p className="text-sm text-zinc-500 mb-3">Computer Engineering @ SJSU</p>
         <h1 className="text-5xl font-bold tracking-tight mb-4">
           Hi, I'm Carson 🌊

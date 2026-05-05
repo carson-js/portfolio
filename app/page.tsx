@@ -22,6 +22,16 @@ const projects = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
+      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-100 dark:border-zinc-800">
+        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+          <span className="text-sm font-medium">Carson Smith</span>
+          <div className="flex items-center gap-6">
+            <a href="#about" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">About</a>
+            <a href="#projects" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">Projects</a>
+            <a href="#contact" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">Contact</a>
+          </div>
+        </div>
+      </nav>
       <section className="max-w-3xl mx-auto px-6 pt-32 pb-20">
         <p className="text-sm text-zinc-500 mb-3">Computer Engineering @ SJSU</p>
         <h1 className="text-5xl font-bold tracking-tight mb-4">

@@ -7,6 +7,12 @@ import {
   IconLock,
 } from "@tabler/icons-react";
 
+const navLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Privacy", href: "/plannerific/privacy" },
+  { label: "carsonjs.me", href: "/" },
+];
+
 const features = [
   {
     icon: <IconActivity size={20} />,
@@ -55,13 +61,13 @@ export default function Plannerific() {
           Plannerific
         </span>
         <ul className="flex gap-6 list-none m-0 p-0">
-          {["Features", "Privacy", "carsonjs.me"].map((link) => (
-            <li key={link}>
+          {navLinks.map((link) => (
+            <li key={link.label}>
               <a
-                href={link === "carsonjs.me" ? "/" : `#${link.toLowerCase()}`}
+                href={link.href}
                 className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#1D9E75] transition-colors no-underline"
               >
-                {link}
+                {link.label}
               </a>
             </li>
           ))}

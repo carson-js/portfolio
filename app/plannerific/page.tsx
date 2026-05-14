@@ -186,6 +186,23 @@ export default function Plannerific() {
           </div>
         </div>
       </div>
+      
+      {/* Call to Action */}
+      <section className="max-w-5xl mx-auto px-8 py-20 text-center">
+        <h2
+          className="text-4xl font-extrabold mb-4 text-[#00C3D0] dark:text-[#01D2E0]"
+          style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-1.5px" }}
+        >
+          Plannerific
+        </h2>
+        <p className="text-sm italic text-zinc-500 dark:text-zinc-400 mb-8">Download for free and experience it all, because getting organized shouldn't cost students money.</p>
+        <button
+            disabled
+            className="bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 rounded-xl px-5 py-2.5 text-sm font-medium no-underline cursor-not-allowed border border-zinc-200 dark:border-zinc-700"
+          >
+            Coming soon to the App Store
+          </button>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-zinc-100 dark:border-zinc-800 px-8 py-6 flex items-center justify-between">

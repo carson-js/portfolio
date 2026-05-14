@@ -3,15 +3,36 @@ export const metadata = {
   description: "Privacy policy for the Curb iOS app.",
 };
 
+const navLinks = [
+  { label: "Features", href: "/curb/#features" },
+  { label: "Privacy", href: "/curb/privacy" },
+  { label: "carsonjs.me", href: "/" },
+];
+
 export default function Privacy() {
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
+    <main style={{ fontFamily: "'Georgia', serif" }} className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
 
       {/* Nav */}
-      <nav className="max-w-2xl mx-auto px-6 py-6">
-        <a href="/curb" className="text-sm text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">
-          ← Back to Curb
+      <nav className="flex items-center justify-between px-8 py-5 border-b border-zinc-100 dark:border-zinc-800">
+        <a 
+          href="/curb" 
+          className="text-lg font-extrabold" 
+        >
+          Curb
         </a>
+        <ul className="flex gap-6 list-none m-0 p-0">
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-red-500 transition-colors no-underline"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
 
       {/* Content */}

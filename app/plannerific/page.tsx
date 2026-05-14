@@ -146,6 +146,46 @@ export default function Plannerific() {
           ))}
         </div>
       </section>
+      
+      {/* Live Activities spotlight */}
+      <div className="bg-zinc-50 dark:bg-zinc-900 border-t border-b border-zinc-100 dark:border-zinc-800 py-16">
+        <div className="max-w-5xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+          {/* Placeholders */}
+          <div className="flex gap-4 justify-center items-end">
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-28 aspect-[9/16] bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-700 rounded-2xl flex items-center justify-center">
+                <span className="text-[9px] text-zinc-400 text-center px-2">Coming soon</span>
+              </div>
+              <p className="text-[9px] text-zinc-400 italic text-center">Lock Screen</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-28 aspect-[9/16] bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-700 rounded-2xl flex items-center justify-center" style={{ height: "256px" }}>
+                <span className="text-[9px] text-zinc-400 text-center px-2">Coming soon</span>
+              </div>
+              <p className="text-[9px] text-zinc-400 italic text-center">Schedule View</p>
+            </div>
+          </div>
+
+          {/* Text */}
+          <div>
+            <p className="text-[11px] font-medium tracking-widest uppercase text-[#00C3D0] dark:text-[#01D2E0] mb-1">Live Activities</p>
+            <h2 className="text-3xl font-bold mb-3 text-zinc-900 dark:text-zinc-50" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-1px" }}>
+              Your schedule, live.
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 mb-5">
+              Plannerific uses iOS Live Activities to put a real-time class countdown on your Lock Screen and Dynamic Island — so you always know exactly how long until your next class without unlocking your phone.
+            </p>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 bg-[#00C3D0] dark:bg-[#01D2E0] text-white text-[9px] font-medium px-2 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                Live
+              </div>
+              <span className="text-xs text-zinc-400">Updates in real time via ActivityKit</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="border-t border-zinc-100 dark:border-zinc-800 px-8 py-6 flex items-center justify-between">

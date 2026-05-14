@@ -9,7 +9,7 @@ const projects = [
     title: "Plannerific",
     description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
     tags: ["SwiftUI", "iOS"],
-    link: null,
+    link: "/plannerific",
   },
 ]
 

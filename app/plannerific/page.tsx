@@ -57,7 +57,7 @@ export default function Plannerific() {
 
       {/* Nav */}
       <nav className="flex items-center justify-between px-8 py-5 border-b border-zinc-100 dark:border-zinc-800">
-        <span className="text-lg font-extrabold tracking-tight text-[#1D9E75]" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.5px" }}>
+        <span className="text-lg font-extrabold tracking-tight text-[#00C3D0] dark:text-[#01D2E0]" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.5px" }}>
           Plannerific
         </span>
         <ul className="flex gap-6 list-none m-0 p-0">
@@ -65,7 +65,7 @@ export default function Plannerific() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#1D9E75] transition-colors no-underline"
+                className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#00C3D0] dark:hover:text-[#01D2E0] transition-colors no-underline"
               >
                 {link.label}
               </a>
@@ -77,14 +77,14 @@ export default function Plannerific() {
       {/* Hero */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto px-8 pt-20 pb-16">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-widest uppercase text-[#1D9E75] bg-[#E1F5EE] dark:bg-[#1D9E75]/10 px-2.5 py-1 rounded-full mb-5">
+          <div className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-widest uppercase text-[#00C3D0] dark:text-[#01D2E0] bg-[#00C3D0]/10 dark:bg-[#01D2E0]/10 px-2.5 py-1 rounded-full mb-5">
             📱 iOS App
           </div>
           <h1
             className="text-5xl font-extrabold leading-none mb-3 text-zinc-900 dark:text-zinc-50"
             style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-2px" }}
           >
-            Plan, <span className="text-[#1D9E75]">terrifically.</span>
+            Plan, <span className="text-[#00C3D0] dark:text-[#01D2E0]">terrifically.</span>
           </h1>
           <p className="text-sm italic font-light text-zinc-500 dark:text-zinc-400 mb-1 tracking-wide">
             Plannerific — your school schedule, always one glance away.
@@ -102,14 +102,12 @@ export default function Plannerific() {
               </span>
             ))}
           </div>
-          <div className="flex gap-2 flex-wrap">
-            <a
-              href="#"
-              className="inline-flex items-center gap-1.5 bg-[#1D9E75] text-white rounded-xl px-5 py-2.5 text-sm font-medium no-underline hover:opacity-90 transition-opacity"
-            >
-              App Store
-            </a>
-          </div>
+          <button
+            disabled
+            className="bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 rounded-xl px-5 py-2.5 text-sm font-medium no-underline cursor-not-allowed border border-zinc-200 dark:border-zinc-700"
+          >
+            Coming soon to the App Store
+          </button>
         </div>
 
         {/* Hero placeholder */}
@@ -122,21 +120,46 @@ export default function Plannerific() {
 
       <div className="h-px bg-zinc-100 dark:bg-zinc-800 mx-8" />
 
-      
+      {/* Features */}
+      <section id="features" className="max-w-5xl mx-auto px-8 py-16">
+        <p className="text-[11px] font-medium tracking-widest uppercase text-[#00C3D0] dark:text-[#01D2E0] mb-1">Features</p>
+        <h2 className="text-3xl font-bold mb-3 text-zinc-900 dark:text-zinc-50" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-1px" }}>
+          Everything you need. Nothing you don't.
+        </h2>
+        <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 max-w-lg mb-10">
+          Plannerific keeps your academic life organized with tools that stay out of your way and show up when it matters.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-6"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#00C3D0]/10 dark:bg-[#01D2E0]/10 flex items-center justify-center text-[#00C3D0] dark:text-[#01D2E0] mb-4">
+                {f.icon}
+              </div>
+              <p className="text-sm font-bold mb-1.5 text-zinc-900 dark:text-zinc-50" style={{ fontFamily: "'Syne', sans-serif" }}>
+                {f.title}
+              </p>
+              <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400 m-0">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-zinc-100 dark:border-zinc-800 px-8 py-6 flex items-center justify-between">
         <div className="flex gap-6">
-        <span className="text-sm font-extrabold text-[#1D9E75]" style={{ fontFamily: "'Syne', sans-serif" }}>
+        <span className="text-sm font-extrabold text-[#00C3D0] dark:text-[#01D2E0]" style={{ fontFamily: "'Syne', sans-serif" }}>
           Plannerific
         </span>
         <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose.</p>
         </div>
         <div className="flex gap-6">
-          <a href="mailto:support@carsonjs.me" className="text-sm text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors" style={{ fontFamily: "system-ui" }}>
+          <a href="mailto:support@carsonjs.me" className="text-sm text-zinc-400 hover:text-[#00C3D0] dark:hover:text-[#01D2E0] transition-colors" style={{ fontFamily: "system-ui" }}>
             support@carsonjs.me
           </a>
-          <a href="/plannerific/privacy" className="text-sm text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors" style={{ fontFamily: "system-ui" }}>
+          <a href="/plannerific/privacy" className="text-sm text-zinc-400 hover:text-[#00C3D0] dark:hover:text-[#01D2E0] transition-colors" style={{ fontFamily: "system-ui" }}>
               Privacy Policy
             </a>
         </div>

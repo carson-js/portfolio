@@ -46,6 +46,11 @@ const features = [
   },
 ];
 
+export const metadata = {
+  title: "Plannerific — Plan, terrifically.",
+  description: "A native iOS planner built for students who want to stay on top of their semester without the clutter. Know what's next, always.",
+};
+
 export default function Plannerific() {
   return (
     <main
@@ -57,9 +62,12 @@ export default function Plannerific() {
 
       {/* Nav */}
       <nav className="flex items-center justify-between px-8 py-5 border-b border-zinc-100 dark:border-zinc-800">
-        <span className="text-lg font-extrabold tracking-tight text-[#00C3D0] dark:text-[#01D2E0]" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.5px" }}>
+        <a 
+          href="/plannerific"
+          className="text-lg font-extrabold tracking-tight text-[#00C3D0] dark:text-[#01D2E0]" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.5px" }}
+        >
           Plannerific
-        </span>
+        </a>
         <ul className="flex gap-6 list-none m-0 p-0">
           {navLinks.map((link) => (
             <li key={link.label}>

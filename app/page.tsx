@@ -7,9 +7,9 @@ const projects = [
   },
   {
     title: "Plannerific",
-    description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
-    tags: ["SwiftUI", "iOS"],
-    link: "/plannerific",
+    description: "A school planner iOS app for managing assignments, schedules, and deadlines. (full feature page coming soon)",
+    tags: ["SwiftUI", "iOS", "SwiftData", "Live Activities"],
+    link: null,
   },
 ]
 

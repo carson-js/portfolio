@@ -5,20 +5,42 @@ export const metadata = {
   description: "A clean, private way to track maintenance, fuel, and efficiency. No ads, no tracking, just utility.",
 };
 
+const navLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Privacy", href: "/curb/privacy" },
+  { label: "carsonjs.me", href: "/" },
+];
+
 export default function Curb() {
   return (
     <main style={{ fontFamily: "'Georgia', serif" }} className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
 
       {/* Nav */}
-      <nav className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
-        <a href="/" className="text-sm text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">← carsonjs.me</a>
-        <span className="text-sm font-medium tracking-widest text-zinc-400 uppercase" style={{ fontFamily: "system-ui" }}>Curb</span>
+      <nav className="flex items-center justify-between px-8 py-5 border-b border-zinc-100 dark:border-zinc-800">
+        <a 
+          href="/curb" 
+          className="text-lg font-extrabold" 
+        >
+          Curb
+        </a>
+        <ul className="flex gap-6 list-none m-0 p-0">
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-red-500 transition-colors no-underline"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
 
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pt-20 pb-20 text-center">
-        <div className="inline-block mb-6 px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-700 text-xs text-zinc-400 tracking-widest uppercase" style={{ fontFamily: "system-ui" }}>
-          iOS App
+        <div className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-widest uppercase text-red-500 bg-red-500/10 dark:bg-red-500/10 px-2.5 py-1 rounded-full mb-5" style={{ fontFamily: "system-ui" }}>
+          📱 iOS App
         </div>
         <Image
           src="/curb-icon-light.png"
@@ -68,7 +90,7 @@ export default function Curb() {
       </section>
 
       {/* Features */}
-      <section className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
+      <section id="features" className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
         <p className="text-xs tracking-widest uppercase text-zinc-400 mb-16 text-center" style={{ fontFamily: "system-ui" }}>Features</p>
 
         {/* Effortless Logging — image right */}
@@ -280,10 +302,10 @@ export default function Curb() {
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose.</p>
           <div className="flex gap-6">
-            <a href="mailto:support@carsonjs.me" className="text-sm text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors" style={{ fontFamily: "system-ui" }}>
+            <a href="mailto:support@carsonjs.me" className="text-sm text-zinc-400 hover:text-red-500 dark:hover:text-red-500 transition-colors" style={{ fontFamily: "system-ui" }}>
               support@carsonjs.me
             </a>
-            <a href="/curb/privacy" className="text-sm text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors" style={{ fontFamily: "system-ui" }}>
+            <a href="/curb/privacy" className="text-sm text-zinc-400 hover:text-red-500 dark:hover:text-red-500 transition-colors" style={{ fontFamily: "system-ui" }}>
               Privacy Policy
             </a>
           </div>

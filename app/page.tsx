@@ -713,35 +713,50 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
-        <div
-          style={{
-            maxWidth: 900,
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <p
-            style={{
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p 
+            className="text-sm text-zinc-400" 
+            style={{ 
               fontFamily: "'Space Mono', monospace",
-              fontSize: 12,
-              color: "var(--text-muted-light)",
-              letterSpacing: "0.02em",
-            }}
+              fontSize: 13,
+              textDecoration: "none",
+              color: "var(--text-muted)",
+             }}
           >
-            © 2026 Carson Smith
+            © 2026 Carson Smith. Built in San Jose, California.
           </p>
-          <p
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 12,
-              color: "var(--text-muted-light)",
-              letterSpacing: "0.02em",
-            }}
-          >
-            Built with Next.js & Tailwind in San Jose, California.
-          </p>
+          <div className="flex gap-6">
+            <a 
+              href="mailto:support@carsonjs.me"
+              style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              support@carsonjs.me
+            </a>
+            <a 
+              href="mailto:support@carsonjs.me"
+              style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </footer>
     </main>

@@ -1,19 +1,6 @@
 "use client";
 
 import Typewriter from "typewriter-effect";
-import { Geist, Space_Mono } from "next/font/google";
-
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-  weight: ["300", "400", "500", "600"],
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  variable: "--font-space-mono",
-  weight: ["400", "700"],
-});
 
 const projects = [
   {
@@ -35,9 +22,10 @@ const projects = [
 export default function Home() {
   return (
     <main 
-      className={'${geist.variable} ${spaceMono.variable} min-h-screen'}
-      style={{ fontFamily: "var(--font-geist)", background: "var(--bg-page)", color: "var(--text-primary)" }}
+      className={'min-h-screen'}
+      style={{ fontFamily: "'Space Mono', monospace", background: "var(--bg-page)", color: "var(--text-primary)" }}
     >
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');`}</style>
 
       {/* Navigation */}
       <nav
@@ -54,7 +42,7 @@ export default function Home() {
         >
           <span
             style={{
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               fontSize: 13,
               color: "#2563EB",
               letterSpacing: "0.05em",
@@ -68,7 +56,7 @@ export default function Home() {
                 key={section}
                 href={'#$[section]'}
                 style={{
-                  fontFamily: "var(--font-space-mono)",
+                  fontFamily: "'Space Mono', monospace",
                   fontSize: 13,
                   color: "var(--text-muted)",
                   textDecoration: "none",
@@ -89,7 +77,7 @@ export default function Home() {
       <section style={{ maxWidth: 900, margin: "0 auto", padding: "6rem 2rem 5rem" }}>
         <p
           style={{
-            fontFamily: "var(--font-space-mono)",
+            fontFamily: "'Space Mono', monospace",
             fontSize: 12,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
@@ -106,7 +94,7 @@ export default function Home() {
 
         <h1
           style={{
-            fontSize: "clamp(2.8rem, 7vw, 5.2rem)",
+            fontSize: "clamp(2rem, 5.2vw, 3.6rem)",
             fontWeight: 600,
             lineHeight: 1.02,
             letterSpacing: "-0.03em",
@@ -165,7 +153,7 @@ export default function Home() {
               fontSize: 14,
               fontWeight: 500,
               textDecoration: "none",
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               letterSpacing: "0.02em",
               transition: "background 0.2s, transform 0.15s",
             }}
@@ -190,7 +178,7 @@ export default function Home() {
               borderRadius: 6,
               fontSize: 14,
               textDecoration: "none",
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               letterSpacing: "0.02em",
               background: "var(--btn-ghost-bg)",
               transition: "border-color 0.2s, color 0.2s, transform 0.15s",
@@ -220,7 +208,7 @@ export default function Home() {
               borderRadius: 6,
               fontSize: 14,
               textDecoration: "none",
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               letterSpacing: "0.02em",
               background: "var(--btn-ghost-bg)",
               transition: "border-color 0.2s, color 0.2s, transform 0.15s",
@@ -247,7 +235,7 @@ export default function Home() {
       <section id="about" className="two-col-section">
         <span
           style={{
-            fontFamily: "var(--font-space-mono)",
+            fontFamily: "'Space Mono', monospace",
             fontSize: 11,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
@@ -309,7 +297,7 @@ export default function Home() {
               <div key={label}>
                 <span
                   style={{
-                    fontFamily: "var(--font-space-mono)",
+                    fontFamily: "'Space Mono', monospace",
                     fontSize: "1.6rem",
                     fontWeight: 700,
                     color: "#2563EB",
@@ -324,7 +312,7 @@ export default function Home() {
                   style={{
                     fontSize: 12,
                     color: "var(--text-muted-light)",
-                    fontFamily: "var(--font-space-mono)",
+                    fontFamily: "'Space Mono', monospace",
                     letterSpacing: "0.04em",
                   }}
                 >
@@ -340,10 +328,10 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" style={{ maxWidth: 900, margin: "0 auto", padding: "5rem 2rem" }}>
-        <div className="two-col-section" style={{ marginBottom: "2rem", paddingBottom: 0 }}>
+        <div className="two-col-header">
           <span
             style={{
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               fontSize: 11,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
@@ -369,7 +357,7 @@ export default function Home() {
             <>
               <p
                 style={{
-                  fontFamily: "var(--font-space-mono)",
+                  fontFamily: "'Space Mono', monospace",
                   fontSize: 11,
                   color: "#2563EB",
                   letterSpacing: "0.1em",
@@ -422,7 +410,7 @@ export default function Home() {
                       <span
                         key={tag}
                         style={{
-                          fontFamily: "var(--font-space-mono)",
+                          fontFamily: "'Space Mono', monospace",
                           fontSize: 11,
                           padding: "0.22rem 0.6rem",
                           borderRadius: 4,
@@ -444,7 +432,7 @@ export default function Home() {
                       fontSize: "1.25rem",
                       color: "#2563EB",
                       flexShrink: 0,
-                      fontFamily: "var(--font-space-mono)",
+                      fontFamily: "'Space Mono', monospace",
                       opacity: 0,
                       transform: "translate(-4px, 4px)",
                       transition: "opacity 0.2s, transform 0.2s",
@@ -507,7 +495,7 @@ export default function Home() {
                   position: "absolute",
                   top: "1.1rem",
                   right: "1.1rem",
-                  fontFamily: "var(--font-space-mono)",
+                  fontFamily: "'Space Mono', monospace",
                   fontSize: 10,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -532,7 +520,7 @@ export default function Home() {
       <section id="contact" className="two-col-section">
         <span
           style={{
-            fontFamily: "var(--font-space-mono)",
+            fontFamily: "'Space Mono', monospace",
             fontSize: 11,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
@@ -579,7 +567,7 @@ export default function Home() {
                 fontSize: 14,
                 fontWeight: 500,
                 textDecoration: "none",
-                fontFamily: "var(--font-space-mono)",
+                fontFamily: "'Space Mono', monospace",
                 letterSpacing: "0.02em",
                 transition: "background 0.2s, transform 0.15s",
               }}
@@ -611,7 +599,7 @@ export default function Home() {
                   borderRadius: 6,
                   fontSize: 14,
                   textDecoration: "none",
-                  fontFamily: "var(--font-space-mono)",
+                  fontFamily: "'Space Mono', monospace",
                   letterSpacing: "0.02em",
                   background: "var(--btn-ghost-bg)",
                   transition: "border-color 0.2s, color 0.2s, transform 0.15s",
@@ -646,7 +634,7 @@ export default function Home() {
         >
           <p
             style={{
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               fontSize: 12,
               color: "var(--text-muted-light)",
               letterSpacing: "0.02em",
@@ -656,7 +644,7 @@ export default function Home() {
           </p>
           <p
             style={{
-              fontFamily: "var(--font-space-mono)",
+              fontFamily: "'Space Mono', monospace",
               fontSize: 12,
               color: "var(--text-muted-light)",
               letterSpacing: "0.02em",

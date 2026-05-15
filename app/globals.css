@@ -47,14 +47,27 @@
   padding: 5rem 2rem;
 }
 
+.two-col-header {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 4rem;
+  margin-bottom: 2rem;
+  align-items: baseline;
+}
+
 @media(max-width: 640px){
   .typewriter-wrap {
-    min-height: 2.1em;
+    min-height: 2.2em;
   }
   .two-col-section {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 3rem 1.5rem;
+  }
+  .two-col-header {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 

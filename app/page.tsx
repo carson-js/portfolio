@@ -320,41 +320,204 @@ export default function Home() {
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
       {/* Projects Section */}
-      <section id="projects" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-500 mb-3">Projects</p>
-        <h2 className="text-3xl font-bold tracking-tight mb-8">Things I've built</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {projects.map((project) => {
-            const Card = (
-              <div
-                key={project.title}
-                className="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col gap-2 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
-              >
-                <h3 className="font-semibold text-lg">{project.title}</h3>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 flex-1">{project.description}</p>
-                <div className="flex gap-2 flex-wrap mt-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            );
-
-            return project.link ? (
-              <a key={project.title} href={project.link} className="group">
-                {Card}
-              </a>
-            ) : (
-              <div key={project.title}>{Card}</div>
-            );
-          })}
+      <section id="projects" style={{ maxWidth: 900, margin: "0 auto", padding: "5rem 2rem" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "190px 1fr",
+            gap: "4rem",
+            marginBottom: "2rem",
+            alignItems: "baseline",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-space-mono)",
+              fontSize: 11,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--text-muted-light)",
+            }}
+          >
+            Projects
+          </span>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              color: "var(--text-primary)",
+            }}
+          >
+            Things I&apos;ve built
+          </h2>
         </div>
+ 
+        {projects.map((project) => {
+          const cardContent = (
+            <>
+              <p
+                style={{
+                  fontFamily: "var(--font-space-mono)",
+                  fontSize: 11,
+                  color: "#2563EB",
+                  letterSpacing: "0.1em",
+                  marginBottom: "0.5rem",
+                  opacity: 0.6,
+                }}
+              >
+                {project.num}
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "space-between",
+                  gap: "1.5rem",
+                }}
+              >
+                <div style={{ flex: 1 }}>
+                  <h3
+                    style={{
+                      fontSize: "1.2rem",
+                      fontWeight: 600,
+                      letterSpacing: "-0.015em",
+                      marginBottom: "0.45rem",
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "0.9rem",
+                      color: "var(--text-muted)",
+                      lineHeight: 1.65,
+                      fontWeight: 300,
+                      maxWidth: 460,
+                    }}
+                  >
+                    {project.description}
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.45rem",
+                      flexWrap: "wrap",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        style={{
+                          fontFamily: "var(--font-space-mono)",
+                          fontSize: 11,
+                          padding: "0.22rem 0.6rem",
+                          borderRadius: 4,
+                          background: "var(--tag-bg)",
+                          border: "1px solid var(--tag-border)",
+                          color: "var(--tag-text)",
+                          letterSpacing: "0.03em",
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {project.link && (
+                  <span
+                    className="project-arrow"
+                    style={{
+                      fontSize: "1.25rem",
+                      color: "#2563EB",
+                      flexShrink: 0,
+                      fontFamily: "var(--font-space-mono)",
+                      opacity: 0,
+                      transform: "translate(-4px, 4px)",
+                      transition: "opacity 0.2s, transform 0.2s",
+                    }}
+                  >
+                    ↗
+                  </span>
+                )}
+              </div>
+            </>
+          );
+ 
+          const sharedStyle: React.CSSProperties = {
+            border: "1px solid var(--border-color)",
+            borderRadius: 12,
+            padding: "1.75rem",
+            marginBottom: "0.75rem",
+            background: "var(--bg-surface)",
+            position: "relative",
+          };
+ 
+          return project.link ? (
+            <a
+              key={project.title}
+              href={project.link}
+              style={{
+                ...sharedStyle,
+                display: "block",
+                textDecoration: "none",
+                color: "inherit",
+                transition: "border-color 0.2s, box-shadow 0.2s, transform 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-hover)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(37,99,235,0.06)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                const arrow = e.currentTarget.querySelector(".project-arrow") as HTMLElement;
+                if (arrow) {
+                  arrow.style.opacity = "1";
+                  arrow.style.transform = "translate(0, 0)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-color)";
+                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.transform = "translateY(0)";
+                const arrow = e.currentTarget.querySelector(".project-arrow") as HTMLElement;
+                if (arrow) {
+                  arrow.style.opacity = "0";
+                  arrow.style.transform = "translate(-4px, 4px)";
+                }
+              }}
+            >
+              {cardContent}
+            </a>
+          ) : (
+            <div key={project.title} style={{ ...sharedStyle, opacity: 0.5 }}>
+              <span
+                style={{
+                  position: "absolute",
+                  top: "1.1rem",
+                  right: "1.1rem",
+                  fontFamily: "var(--font-space-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--text-muted-light)",
+                  border: "1px solid var(--border-color)",
+                  borderRadius: 4,
+                  padding: "0.2rem 0.55rem",
+                  background: "var(--soon-bg)",
+                }}
+              >
+                Soon
+              </span>
+              {cardContent}
+            </div>
+          );
+        })}
       </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* Contact Section */}
       <section id="contact" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
         <p className="text-sm text-zinc-500 mb-3">Contact</p>
         <h2 className="text-3xl font-bold tracking-tight mb-4">Get in touch</h2>

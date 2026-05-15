@@ -315,7 +315,7 @@ export default function Home() {
             {[
               { num: "4.0", label: "GPA" },
               { num: "2", label: "iOS apps" },
-              { num: "'29", label: "Graduation" },
+              { num: "May 2029", label: "Graduation" },
             ].map(({ num, label }) => (
               <div key={label}>
                 <span
@@ -663,8 +663,38 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-400">© 2026 Carson Smith. Built with Next.js and Tailwind in San Jose, California.</p>
+      {/* Footer */}
+      <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-space-mono)",
+              fontSize: 12,
+              color: "var(--text-muted-light)",
+              letterSpacing: "0.02em",
+            }}
+          >
+            © 2026 Carson Smith
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-space-mono)",
+              fontSize: 12,
+              color: "var(--text-muted-light)",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Built with Next.js & Tailwind in San Jose, California.
+          </p>
+        </div>
       </footer>
     </main>
   );

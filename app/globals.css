@@ -37,6 +37,27 @@
   }
 }
 
+.two-col-section {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+@media(max-width: 640px){
+  .typewriter-wrap {
+    min-height: 2.1em;
+  }
+  .two-col-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

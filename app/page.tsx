@@ -115,7 +115,7 @@ export default function Home() {
           }}
         >
           Hi, I&apos;m Carson -<br />
-          <span style={{ display: "flex", alignItems: "baseline", gap: "0.3em", flexWrap: "wrap" }}>
+          <span className="typewriter-wrap" style={{ display: "flex", alignItems: "baseline", gap: "0.3em", flexWrap: "wrap" }}>
             <span style={{ fontWeight: 600 }}>a</span>
             <span style={{ color: "#2563EB" }}>
               <Typewriter
@@ -244,18 +244,7 @@ export default function Home() {
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
       {/* About Section */}
-      <section
-        id="about"
-        style={{
-          maxWidth: 900,
-          margin: "0 auto",
-          padding: "5rem 2rem",
-          display: "grid",
-          gridTemplateColumns: "190px 1fr",
-          gap: "4rem",
-          alignItems: "start",
-        }}
-      >
+      <section id="about" className="two-col-section">
         <span
           style={{
             fontFamily: "var(--font-space-mono)",
@@ -351,15 +340,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" style={{ maxWidth: 900, margin: "0 auto", padding: "5rem 2rem" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "190px 1fr",
-            gap: "4rem",
-            marginBottom: "2rem",
-            alignItems: "baseline",
-          }}
-        >
+        <div className="two-col-section" style={{ marginBottom: "2rem", paddingBottom: 0 }}>
           <span
             style={{
               fontFamily: "var(--font-space-mono)",
@@ -548,18 +529,7 @@ export default function Home() {
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
       {/* Contact */}
-      <section
-        id="contact"
-        style={{
-          maxWidth: 900,
-          margin: "0 auto",
-          padding: "5rem 2rem",
-          display: "grid",
-          gridTemplateColumns: "190px 1fr",
-          gap: "4rem",
-          alignItems: "start",
-        }}
-      >
+      <section id="contact" className="two-col-section">
         <span
           style={{
             fontFamily: "var(--font-space-mono)",

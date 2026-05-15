@@ -85,31 +85,133 @@ export default function Home() {
         </div>
       </nav>
 
-
-      <section className="max-w-3xl mx-auto px-6 pt-24 pb-20">
-        <p className="text-sm text-zinc-500 mb-3">Computer Engineering @ SJSU</p>
-        <h1 className="text-5xl font-bold tracking-tight mb-4">
-          Hi, I'm Carson 🌊
-        </h1>
-        <p className="text-lg text-zinc-500 dark:text-zinc-400 max-w-lg mb-8">
-          I build iOS apps and am currently digging into systems-level programming with C and C++.
-          Currently a freshman with a focus on making things that actually work well.
+      {/* Hero Section */}
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "6rem 2rem 5rem" }}>
+        <p
+          style={{
+            fontFamily: "var(--font-space-mono)",
+            fontSize: 12,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "#2563EB",
+            marginBottom: "1.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.75rem",
+          }}
+        >
+          <span style={{ display: "block", width: 24, height: 1, background: "#2563EB" }} />
+          Computer Engineering @ SJSU
         </p>
-        <div className="flex gap-4">
+
+        <h1
+          style={{
+            fontSize: "clamp(2.8rem, 7vw, 5.2rem)",
+            fontWeight: 600,
+            lineHeight: 1.02,
+            letterSpacing: "-0.03em",
+            marginBottom: "1.5rem",
+            color: "var(--text-primary)",
+          }}
+        >
+          Hi, I&apos;m Carson -<br />
+          <span style={{ display: "flex", alignItems: "baseline", gap: "0.3em", flexWrap: "wrap" }}>
+            <span style={{ fontWeight: 600 }}>a</span>
+            <span style={{ color: "#2563EB" }}>
+              <Typewriter
+                options={{
+                  strings: [
+                    "student.",
+                    "developer.",
+                    "programmer.",
+                    "iOS engineer.",
+                    "builder.",
+                    "systems thinker.",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 80,
+                  deleteSpeed: 40,
+                }}
+              />
+            </span>
+          </span>
+        </h1>
+
+        <p
+          style={{
+            fontSize: "1.05rem",
+            color: "var(--text-muted)",
+            maxWidth: 480,
+            marginBottom: "2.5rem",
+            lineHeight: 1.75,
+            fontWeight: 300,
+          }}
+        >
+          I build{" "}
+          <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>iOS apps</span> and dig
+          into systems-level programming with C and C++. Freshman with a 4.0, focused on making
+          things that actually work well.
+        </p>
+        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           <a
             href="#projects"
-            className="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-sm font-medium hover:opacity-80 transition-opacity"
-            >
-              View projects
-            </a>
-            <a
-              href="#contact"
-              className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
-            >
-              Contact me
-            </a>
+            style={{
+              display: "inline-block",
+              padding: "0.65rem 1.4rem",
+              background: "#2563EB",
+              color: "#fff",
+              borderRadius: 6,
+              fontSize: 14,
+              fontWeight: 500,
+              textDecoration: "none",
+              fontFamily: "var(--font-space-mono)",
+              letterSpacing: "0.02em",
+              transition: "background 0.2s, transform 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#1D4ED8";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#2563EB";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            View projects
+          </a>
+          <a
+            href="#contact"
+            style={{
+              display: "inline-block",
+              padding: "0.65rem 1.4rem",
+              border: "1px solid var(--border-color)",
+              color: "var(--text-muted)",
+              borderRadius: 6,
+              fontSize: 14,
+              textDecoration: "none",
+              fontFamily: "var(--font-space-mono)",
+              letterSpacing: "0.02em",
+              background: "var(--btn-ghost-bg)",
+              transition: "border-color 0.2s, color 0.2s, transform 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "var(--border-hover)";
+              e.currentTarget.style.color = "var(--text-primary)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "var(--border-color)";
+              e.currentTarget.style.color = "var(--text-muted)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            Get in touch
+          </a>
         </div>
       </section>
+
+
       <section id="about" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
         <p className="text-sm text-zinc-500 mb-3">About</p>
         <h2 className="text-3xl font-bold tracking-tight mb-6">A bit about me</h2>

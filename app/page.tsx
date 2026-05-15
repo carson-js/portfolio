@@ -208,6 +208,36 @@ export default function Home() {
           >
             Get in touch
           </a>
+          <a
+            href="https://www.github.com/carson-js"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              padding: "0.65rem 1.4rem",
+              border: "1px solid var(--border-color)",
+              color: "var(--text-muted)",
+              borderRadius: 6,
+              fontSize: 14,
+              textDecoration: "none",
+              fontFamily: "var(--font-space-mono)",
+              letterSpacing: "0.02em",
+              background: "var(--btn-ghost-bg)",
+              transition: "border-color 0.2s, color 0.2s, transform 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "var(--border-hover)";
+              e.currentTarget.style.color = "var(--text-primary)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "var(--border-color)";
+              e.currentTarget.style.color = "var(--text-muted)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            GitHub
+          </a>
         </div>
       </section>
       
@@ -517,37 +547,120 @@ export default function Home() {
 
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
-      {/* Contact Section */}
-      <section id="contact" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-500 mb-3">Contact</p>
-        <h2 className="text-3xl font-bold tracking-tight mb-4">Get in touch</h2>
-        <p className="text-zinc-500 dark:text-zinc-400 max-w-md mb-8">
-          I'm always open to chatting about projects, opportunities, or just cool tech.
-          The best way to reach me is by email.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a
-          href="mailto:me@carsonjs.me"
-          className="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-sm font-medium hover:opacity-80 transition-opacity w-fit"
+      {/* Contact */}
+      <section
+        id="contact"
+        style={{
+          maxWidth: 900,
+          margin: "0 auto",
+          padding: "5rem 2rem",
+          display: "grid",
+          gridTemplateColumns: "190px 1fr",
+          gap: "4rem",
+          alignItems: "start",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "var(--font-space-mono)",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--text-muted-light)",
+            paddingTop: "0.4rem",
+          }}
+        >
+          Contact
+        </span>
+        <div>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "0.75rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)",
+            }}
           >
-            me@carsonjs.me
-          </a> 
-          <a
-            href="https://www.github.com/carson-js"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg0zinc-900 transition-colors w-fit"
+            Get in touch
+          </h2>
+          <p
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "0.95rem",
+              lineHeight: 1.75,
+              marginBottom: "2rem",
+              fontWeight: 300,
+              maxWidth: 400,
+            }}
           >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/carson-js"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg0zinc-900 transition-colors w-fit"
-          >
-            LinkedIn
-          </a>
+            Open to chatting about projects, internships, or just cool tech. Best reached by email.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            <a
+              href="mailto:me@carsonjs.me"
+              style={{
+                display: "inline-block",
+                padding: "0.65rem 1.4rem",
+                background: "#2563EB",
+                color: "#fff",
+                borderRadius: 6,
+                fontSize: 14,
+                fontWeight: 500,
+                textDecoration: "none",
+                fontFamily: "var(--font-space-mono)",
+                letterSpacing: "0.02em",
+                transition: "background 0.2s, transform 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#1D4ED8";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#2563EB";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              me@carsonjs.me
+            </a>
+            {[
+              { label: "GitHub", href: "https://www.github.com/carson-js" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/carson-js" },
+            ].map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  padding: "0.65rem 1.4rem",
+                  border: "1px solid var(--border-color)",
+                  color: "var(--text-muted)",
+                  borderRadius: 6,
+                  fontSize: 14,
+                  textDecoration: "none",
+                  fontFamily: "var(--font-space-mono)",
+                  letterSpacing: "0.02em",
+                  background: "var(--btn-ghost-bg)",
+                  transition: "border-color 0.2s, color 0.2s, transform 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-hover)";
+                  e.currentTarget.style.color = "var(--text-primary)";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-color)";
+                  e.currentTarget.style.color = "var(--text-muted)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
       <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-zinc-100 dark:border-zinc-800">

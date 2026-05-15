@@ -210,26 +210,116 @@ export default function Home() {
           </a>
         </div>
       </section>
+      
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
-
-      <section id="about" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-500 mb-3">About</p>
-        <h2 className="text-3xl font-bold tracking-tight mb-6">A bit about me</h2>
-        <div className="flex flex-col gap-4 text-zinc-600 dark:text-zinc-400 max-w-lg">
-          <p>
-            I'm a Computer Engineering student at San Jose State University,
-            expected to graduate in May 2029. I carry a 4.0 GPA and am part of
-            the Software and Computer Engineering Society and the Responsible
-            Computing Club.
+      {/* About Section */}
+      <section
+        id="about"
+        style={{
+          maxWidth: 900,
+          margin: "0 auto",
+          padding: "5rem 2rem",
+          display: "grid",
+          gridTemplateColumns: "190px 1fr",
+          gap: "4rem",
+          alignItems: "start",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "var(--font-space-mono)",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--text-muted-light)",
+            paddingTop: "0.4rem",
+          }}
+        >
+          About
+        </span>
+        <div>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "1.25rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)",
+            }}
+          >
+            A bit about me
+          </h2>
+          <p
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "0.97rem",
+              lineHeight: 1.8,
+              marginBottom: "1rem",
+              fontWeight: 300,
+            }}
+          >
+            I&apos;m a Computer Engineering student at{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>
+              San José State University
+            </span>
+            , expected to graduate in May 2029. I&apos;m part of the Software and Computer
+            Engineering Society and the Responsible Computing Club.
           </p>
-          <p>
-            I like understanding how things work under the hood. I'd rather
-            build and compile things manually than let an IDE do it for me.
-            Outside of class, I'm building iOS apps with SwiftUI and working
-            through systems programming, learning both C and C++.
+          <p
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "0.97rem",
+              lineHeight: 1.8,
+              fontWeight: 300,
+            }}
+          >
+            I like understanding how things work under the hood — I&apos;d rather build and compile
+            things manually than let an IDE do it for me. Outside of class I&apos;m building iOS
+            apps with{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>SwiftUI</span> and
+            working through systems programming in C and C++.
           </p>
+          <div style={{ display: "flex", gap: "2.5rem", marginTop: "2rem", flexWrap: "wrap" }}>
+            {[
+              { num: "4.0", label: "GPA" },
+              { num: "2", label: "iOS apps" },
+              { num: "'29", label: "Graduation" },
+            ].map(({ num, label }) => (
+              <div key={label}>
+                <span
+                  style={{
+                    fontFamily: "var(--font-space-mono)",
+                    fontSize: "1.6rem",
+                    fontWeight: 700,
+                    color: "#2563EB",
+                    display: "block",
+                    lineHeight: 1,
+                    marginBottom: "0.3rem",
+                  }}
+                >
+                  {num}
+                </span>
+                <span
+                  style={{
+                    fontSize: 12,
+                    color: "var(--text-muted-light)",
+                    fontFamily: "var(--font-space-mono)",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+ 
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* Projects Section */}
       <section id="projects" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
         <p className="text-sm text-zinc-500 mb-3">Projects</p>
         <h2 className="text-3xl font-bold tracking-tight mb-8">Things I've built</h2>
@@ -298,7 +388,7 @@ export default function Home() {
         </div>
       </section>
       <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-400">© 2026 Carson. Built with Next.js and Tailwind.</p>
+        <p className="text-sm text-zinc-400">© 2026 Carson Smith. Built with Next.js and Tailwind in San Jose, California.</p>
       </footer>
     </main>
   );

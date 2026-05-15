@@ -300,7 +300,7 @@ export default function Curb() {
         </div>
 
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose.</p>
+          <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose, California.</p>
           <div className="flex gap-6">
             <a href="mailto:support@carsonjs.me" className="text-sm text-zinc-400 hover:text-red-500 dark:hover:text-red-500 transition-colors" style={{ fontFamily: "system-ui" }}>
               support@carsonjs.me

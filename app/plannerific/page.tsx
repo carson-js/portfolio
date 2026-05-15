@@ -218,7 +218,7 @@ export default function Plannerific() {
         <span className="text-sm font-extrabold text-[#00C3D0] dark:text-[#01D2E0]" style={{ fontFamily: "'Syne', sans-serif" }}>
           Plannerific
         </span>
-        <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose.</p>
+        <p className="text-sm text-zinc-400" style={{ fontFamily: "system-ui" }}>© 2026 Carson Smith. Built in San Jose, California.</p>
         </div>
         <div className="flex gap-6">
           <a href="mailto:support@carsonjs.me" className="text-sm text-zinc-400 hover:text-[#00C3D0] dark:hover:text-[#01D2E0] transition-colors" style={{ fontFamily: "system-ui" }}>

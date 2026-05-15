@@ -51,10 +51,10 @@ export default function Home() {
             carson smith
           </span>
           <div className="flex items-center gap-8">
-            {["about", "projects", "contact"].map((section) => (
+            {["about", "projects", "skills", "contact"].map((section) => (
               <a
                 key={section}
-                href={'#$[section]'}
+                href={'#' + section}
                 style={{
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 13,
@@ -516,6 +516,95 @@ export default function Home() {
 
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
+      {/* Skills */}
+      <section id="skills" className="two-col-section">
+        <span
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--text-muted-light)",
+            paddingTop: "0.4rem",
+          }}
+        >
+          Skills
+        </span>
+        <div>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "0.75rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)",
+            }}
+          >
+            What I work with
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            {[
+              {
+                category: "Languages",
+                skills: ["C", "C++", "Python", "Swift"],
+              },
+              {
+                category: "iOS & Mobile",
+                skills: ["Swift", "SwiftUI", "SwiftData", "Xcode"],
+              },
+              {
+                category: "Web",
+                skills: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+              },
+              {
+                category: "Tools",
+                skills: ["Git", "GitHub", "SOLIDWORKS", "Autodesk Fusion 360", "NI Multisim"],
+              },
+              {
+                category: "Hardware",
+                skills: ["Breadboarding", "Logic Probe", "Oscilloscope", "Integrated Circuits", "Function Generator", "Soldering"],
+              },
+            ].map(({ category, skills }) => (
+              <div key={category} style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <span
+                  style={{
+                    fontFamily: "var(--font-space-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "var(--text-muted-light)",
+                  }}
+                >
+                  {category}
+                </span>
+                <div style={{ display: "flex", gap: "0.45rem", flexWrap: "wrap" }}>
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      style={{
+                        fontFamily: "var(--font-space-mono)",
+                        fontSize: 12,
+                        padding: "0.3rem 0.75rem",
+                        borderRadius: 4,
+                        background: "var(--tag-bg)",
+                        border: "1px solid var(--tag-border)",
+                        color: "var(--tag-text)",
+                        letterSpacing: "0.03em",
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
       {/* Contact */}
       <section id="contact" className="two-col-section">
         <span
@@ -621,6 +710,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
         <div

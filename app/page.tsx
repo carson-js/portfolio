@@ -1,31 +1,91 @@
+"use client";
+
+import Typewriter from "typewriter-effect";
+import { Geist, Space_Mono } from "next/font/google";
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  weight: ["300", "400", "500", "600"],
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
+});
+
 const projects = [
   {
     title: "Curb",
-    description: "A car management app for tracking maintenance, costs, and vehicle info. Built with SwiftUI and SwiftData.",
+    description: "A car management app for tracking maintenance, costs, and vehicle info.",
     tags: ["SwiftUI", "Swift", "SwiftData", "iOS"],
     link: "/curb",
+    num: "01",
   },
   {
     title: "Plannerific",
-    description: "A school planner iOS app for managing assignments, schedules, and deadlines. (full feature page coming soon)",
+    description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
     tags: ["SwiftUI", "iOS", "SwiftData", "Live Activities"],
     link: null,
+    num: "02",
   },
 ]
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-100 dark:border-zinc-800">
-        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="text-sm font-medium">Carson Smith</span>
-          <div className="flex items-center gap-6">
-            <a href="#about" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">About</a>
-            <a href="#projects" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">Projects</a>
-            <a href="#contact" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">Contact</a>
+    <main 
+      className={'${geist.variable} ${spaceMono.variable} min-h-screen'}
+      style={{ fontFamily: "var(--font-geist)", background: "var(--bg-page)", color: "var(--text-primary)" }}
+    >
+
+      {/* Navigation */}
+      <nav
+        className="sticky top-0 z-50 border-b"
+        style={{
+          background: "var(--bg-page)",
+          backdropFilter: "blur(12px)",
+          borderColor: "var(--border-color)",
+        }}
+      >
+        <div
+          className="mx-auto flex items-center justify-between"
+          style={{ maxWidth: 900, padding: "0 2rem", height: 56 }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-space-mono)",
+              fontSize: 13,
+              color: "#2563EB",
+              letterSpacing: "0.05em",
+            }}
+          >
+            carson smith
+          </span>
+          <div className="flex items-center gap-8">
+            {["about", "projects", "contact"].map((section) => (
+              <a
+                key={section}
+                href={'#$[section]'}
+                style={{
+                  fontFamily: "var(--font-space-mono)",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+              >
+                {section}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
+
+
       <section className="max-w-3xl mx-auto px-6 pt-24 pb-20">
         <p className="text-sm text-zinc-500 mb-3">Computer Engineering @ SJSU</p>
         <h1 className="text-5xl font-bold tracking-tight mb-4">
@@ -50,7 +110,7 @@ export default function Home() {
             </a>
         </div>
       </section>
-      <section id="about" className="max-w-3xl mx-auto px-6 py-20 border-t boarder-zinc-100 dark:boarder-zinc-800">
+      <section id="about" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
         <p className="text-sm text-zinc-500 mb-3">About</p>
         <h2 className="text-3xl font-bold tracking-tight mb-6">A bit about me</h2>
         <div className="flex flex-col gap-4 text-zinc-600 dark:text-zinc-400 max-w-lg">

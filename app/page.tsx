@@ -1,6 +1,7 @@
 "use client";
 
 import Typewriter from "typewriter-effect";
+import { useState } from "react";
 
 const projects = [
   {
@@ -20,6 +21,7 @@ const projects = [
 ]
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main 
       className={'min-h-screen'}
@@ -29,11 +31,11 @@ export default function Home() {
 
       {/* Navigation */}
       <nav
-        className="sticky top-0 z-50 border-b"
+        className="sticky top-0 z-50"
         style={{
           background: "var(--bg-page)",
           backdropFilter: "blur(12px)",
-          borderColor: "var(--border-color)",
+          borderColor: "1px solid var(--border-color)",
         }}
       >
         <div
@@ -50,7 +52,7 @@ export default function Home() {
           >
             carson smith
           </span>
-          <div className="flex items-center gap-8">
+          <div className="nav-links-desktop">
             {["about", "projects", "skills", "contact"].map((section) => (
               <a
                 key={section}
@@ -70,6 +72,25 @@ export default function Home() {
               </a>
             ))}
           </div>
+
+            {/* Hamburger Button */}
+            <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>    
+        {/* Mobile Menu */}
+        <div className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
+          {["about", "projects", "skills", "contact"].map((section) => (
+            <a
+              key={section}
+              href={'#' + section}
+              onClick={() => setMenuOpen(false)}
+            >
+              {section}
+            </a>
+          ))}
         </div>
       </nav>
 

@@ -96,157 +96,142 @@ export default function Home() {
 
       {/* Hero Section */}
       <section style={{ maxWidth: 900, margin: "0 auto", padding: "6rem 2rem 5rem" }}>
-        <p
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 12,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#2563EB",
-            marginBottom: "1.5rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.75rem",
-          }}
-        >
-          <span style={{ display: "block", width: 24, height: 1, background: "#2563EB" }} />
-          Computer Engineering @ SJSU
-        </p>
+        <div className="hero-inner">
+          {/* Text */}
+          <div className="hero-text">
+            <p
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 12,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2563EB",
+                marginBottom: "1.5rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem",
+              }}
+            >
+              <span style={{ display: "block", width: 24, height: 1, background: "#2563EB" }} />
+              Computer Engineering @ SJSU
+            </p>
 
-        <h1
-          style={{
-            fontSize: "clamp(2rem, 5.2vw, 3.6rem)",
-            fontWeight: 600,
-            lineHeight: 1.02,
-            letterSpacing: "-0.03em",
-            marginBottom: "1.5rem",
-            color: "var(--text-primary)",
-          }}
-        >
-          Hi, I&apos;m Carson -<br />
-          <span className="typewriter-wrap" style={{ display: "flex", alignItems: "baseline", gap: "0.3em", flexWrap: "wrap" }}>
-            <span style={{ fontWeight: 600 }}>a</span>
-            <span style={{ color: "#2563EB" }}>
-              <Typewriter
-                options={{
-                  strings: [
-                    "student.",
-                    "developer.",
-                    "programmer.",
-                    "iOS engineer.",
-                    "builder.",
-                    "systems thinker.",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  delay: 80,
-                  deleteSpeed: 40,
+            <h1
+              style={{
+                fontSize: "clamp(2.2rem, 5vw, 4.5rem)",
+                fontWeight: 600,
+                lineHeight: 1.02,
+                letterSpacing: "-0.03em",
+                marginBottom: "1.5rem",
+                color: "var(--text-primary)",
+              }}
+            >
+              Hi, I&apos;m Carson —<br />
+              <span className="typewriter-wrap">
+                <span style={{ fontWeight: 600 }}>a</span>
+                <span style={{ color: "#2563EB" }}>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "student.",
+                        "developer.",
+                        "programmer.",
+                        "iOS engineer.",
+                        "builder.",
+                        "systems thinker.",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 80,
+                      deleteSpeed: 40,
+                    }}
+                  />
+                </span>
+              </span>
+            </h1>
+
+            <p
+              style={{
+                fontSize: "1.05rem",
+                color: "var(--text-muted)",
+                maxWidth: 480,
+                marginBottom: "2.5rem",
+                lineHeight: 1.75,
+                fontWeight: 300,
+              }}
+            >
+              I build{" "}
+              <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>iOS apps</span> and
+              dig into systems-level programming with C and C++. Freshman with a 4.0, focused on
+              making things that actually work well.
+            </p>
+
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <a
+                href="#projects"
+                style={{
+                  display: "inline-block",
+                  padding: "0.65rem 1.4rem",
+                  background: "#2563EB",
+                  color: "#fff",
+                  borderRadius: 6,
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: "0.02em",
+                  transition: "background 0.2s, transform 0.15s",
                 }}
-              />
-            </span>
-          </span>
-        </h1>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#1D4ED8";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "#2563EB";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                View projects
+              </a>
+              <a
+                href="#contact"
+                style={{
+                  display: "inline-block",
+                  padding: "0.65rem 1.4rem",
+                  border: "1px solid var(--border-color)",
+                  color: "var(--text-muted)",
+                  borderRadius: 6,
+                  fontSize: 14,
+                  textDecoration: "none",
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: "0.02em",
+                  background: "var(--btn-ghost-bg)",
+                  transition: "border-color 0.2s, color 0.2s, transform 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-hover)";
+                  e.currentTarget.style.color = "var(--text-primary)";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-color)";
+                  e.currentTarget.style.color = "var(--text-muted)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
 
-        <p
-          style={{
-            fontSize: "1.05rem",
-            color: "var(--text-muted)",
-            maxWidth: 480,
-            marginBottom: "2.5rem",
-            lineHeight: 1.75,
-            fontWeight: 300,
-          }}
-        >
-          I build{" "}
-          <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>iOS apps</span> and dig
-          into systems-level programming with C and C++. Freshman with a 4.0, focused on making
-          things that actually work well.
-        </p>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-          <a
-            href="#projects"
-            style={{
-              display: "inline-block",
-              padding: "0.65rem 1.4rem",
-              background: "#2563EB",
-              color: "#fff",
-              borderRadius: 6,
-              fontSize: 14,
-              fontWeight: 500,
-              textDecoration: "none",
-              fontFamily: "'Space Mono', monospace",
-              letterSpacing: "0.02em",
-              transition: "background 0.2s, transform 0.15s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#1D4ED8";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#2563EB";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            View projects
-          </a>
-          <a
-            href="#contact"
-            style={{
-              display: "inline-block",
-              padding: "0.65rem 1.4rem",
-              border: "1px solid var(--border-color)",
-              color: "var(--text-muted)",
-              borderRadius: 6,
-              fontSize: 14,
-              textDecoration: "none",
-              fontFamily: "'Space Mono', monospace",
-              letterSpacing: "0.02em",
-              background: "var(--btn-ghost-bg)",
-              transition: "border-color 0.2s, color 0.2s, transform 0.15s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "var(--border-hover)";
-              e.currentTarget.style.color = "var(--text-primary)";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "var(--border-color)";
-              e.currentTarget.style.color = "var(--text-muted)";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            Get in touch
-          </a>
-          <a
-            href="https://www.github.com/carson-js"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-block",
-              padding: "0.65rem 1.4rem",
-              border: "1px solid var(--border-color)",
-              color: "var(--text-muted)",
-              borderRadius: 6,
-              fontSize: 14,
-              textDecoration: "none",
-              fontFamily: "'Space Mono', monospace",
-              letterSpacing: "0.02em",
-              background: "var(--btn-ghost-bg)",
-              transition: "border-color 0.2s, color 0.2s, transform 0.15s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "var(--border-hover)";
-              e.currentTarget.style.color = "var(--text-primary)";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "var(--border-color)";
-              e.currentTarget.style.color = "var(--text-muted)";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            GitHub
-          </a>
+          {/* Photo */}
+          <div className="hero-photo-wrap">
+            <img
+              src="/me.webp"
+              alt="Carson Smith"
+              className="hero-photo"
+            />
+          </div>
         </div>
       </section>
       

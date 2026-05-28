@@ -28,8 +28,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#0A0A0F" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#F7F8FA" />
+        {/* Safari ignores the media attribute on theme-color; JS sets the correct value instead */}
+        <script dangerouslySetInnerHTML={{__html:`(function(){var m=document.querySelector('meta[name="theme-color"]'),q=window.matchMedia('(prefers-color-scheme: dark)');function u(e){m.content=e.matches?'#0A0A0F':'#F7F8FA'}u(q);q.addEventListener('change',u)})()`}} />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

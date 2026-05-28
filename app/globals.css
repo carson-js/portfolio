@@ -35,9 +35,6 @@
     --soon-bg: #0A0A0F;
     --nav-bg: rgba(10, 10, 15, 0.85);
   }
-  html {
-    background-color: #0A0A0F;
-  }
 }
 
 .two-col-section {
@@ -187,7 +184,7 @@
 }
 
 html {
-  background-color: #F7F8FA;
+  background-color: var(--bg-page);
 }
 
 body {

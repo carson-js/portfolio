@@ -332,7 +332,7 @@ export default function Home() {
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
       {/* Projects Section */}
-      <section id="projects" style={{ maxWidth: 900, margin: "0 auto", padding: "5rem 2rem" }}>
+      <section id="projects" className="projects-section" style={{ maxWidth: 900, margin: "0 auto", padding: "5rem 2rem" }}>
         <div className="two-col-header">
           <span
             style={{

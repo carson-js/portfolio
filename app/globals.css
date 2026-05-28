@@ -157,6 +157,10 @@
     padding: 2rem 2rem 5rem;
   }
 
+  .projects-section {
+    padding: 3rem 1.5rem !important;
+  }
+
   /* Reserve one extra line under the typewriter so overflow doesn't shift the page */
   .typewriter-wrap {
     min-height: calc(1.02em + 2.5rem);

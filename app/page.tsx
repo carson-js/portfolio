@@ -95,7 +95,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section style={{ maxWidth: 900, margin: "0 auto", padding: "6rem 2rem 5rem" }}>
+      <section className="hero-section" style={{ maxWidth: 900, margin: "0 auto" }}>
         <div className="hero-inner">
           {/* Text */}
           <div className="hero-text">
@@ -118,7 +118,7 @@ export default function Home() {
 
             <h1
               style={{
-                fontSize: "clamp(2.2rem, 5vw, 4.5rem)",
+                fontSize: "clamp(2.2rem, 4.5vw, 3rem)",
                 fontWeight: 600,
                 lineHeight: 1.02,
                 letterSpacing: "-0.03em",
@@ -128,17 +128,16 @@ export default function Home() {
             >
               Hi, I&apos;m Carson —<br />
               <span className="typewriter-wrap">
-                <span style={{ fontWeight: 600 }}>a</span>
                 <span style={{ color: "#2563EB" }}>
                   <Typewriter
                     options={{
                       strings: [
-                        "student.",
-                        "developer.",
-                        "programmer.",
-                        "iOS engineer.",
-                        "builder.",
-                        "systems thinker.",
+                        "a student.",
+                        "a developer.",
+                        "a programmer.",
+                        "an iOS engineer.",
+                        "a builder.",
+                        "a systems thinker.",
                       ],
                       autoStart: true,
                       loop: true,
@@ -151,11 +150,11 @@ export default function Home() {
             </h1>
 
             <p
+              className="hero-body"
               style={{
                 fontSize: "1.05rem",
                 color: "var(--text-muted)",
                 maxWidth: 480,
-                marginBottom: "2.5rem",
                 lineHeight: 1.75,
                 fontWeight: 300,
               }}
@@ -720,18 +719,18 @@ export default function Home() {
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p 
-            className="text-sm text-zinc-400" 
-            style={{ 
+          <p
+            className="text-sm text-zinc-400 text-center sm:text-left"
+            style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 13,
               textDecoration: "none",
               color: "var(--text-muted)",
-             }}
+            }}
           >
             © 2026 Carson Smith. Built in San Jose, California.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
             <a 
               href="mailto:support@carsonjs.me"
               style={{
@@ -746,21 +745,6 @@ export default function Home() {
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
             >
               support@carsonjs.me
-            </a>
-            <a 
-              href="mailto:support@carsonjs.me"
-              style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 13,
-                  color: "var(--text-muted)",
-                  textDecoration: "none",
-                  letterSpacing: "0.03em",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
-            >
-              Privacy Policy
             </a>
           </div>
         </div>

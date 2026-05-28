@@ -149,9 +149,19 @@
 }
 
 @media(max-width: 640px){
-  .typewriter-wrap {
-    min-height: 2.2em;
+  .hero-section {
+    padding-top: 2rem;
   }
+
+  /* Reserve one extra line under the typewriter so overflow doesn't shift the page */
+  .typewriter-wrap {
+    min-height: calc(1.02em + 2.5rem);
+  }
+
+  .hero-body {
+    margin-bottom: 2.5rem;
+  }
+
   .two-col-section {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -181,6 +191,23 @@
     aspect-ratio: 4 / 3;
     object-position: center 20%;
   }
+}
+
+.hero-section {
+  padding: 6rem 2rem 5rem;
+}
+
+.typewriter-wrap {
+  display: inline-block;
+}
+
+.hero-body {
+  margin-bottom: 2.5rem;
+}
+
+.Typewriter,
+.Typewriter__wrapper {
+  display: inline !important;
 }
 
 html {

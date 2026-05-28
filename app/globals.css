@@ -113,6 +113,10 @@
   color: var(--text-primary);
 }
 
+.hero-section {
+  padding: 6rem 2rem 5rem;
+}
+
 .hero-inner {
   display: flex;
   align-items: center;
@@ -150,7 +154,7 @@
 
 @media(max-width: 640px){
   .hero-section {
-    padding-top: 2rem;
+    padding: 2rem 2rem 5rem;
   }
 
   /* Reserve one extra line under the typewriter so overflow doesn't shift the page */
@@ -191,10 +195,6 @@
     aspect-ratio: 4 / 3;
     object-position: center 20%;
   }
-}
-
-.hero-section {
-  padding: 6rem 2rem 5rem;
 }
 
 .typewriter-wrap {

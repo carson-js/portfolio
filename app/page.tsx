@@ -2,6 +2,7 @@
 
 import Typewriter from "typewriter-effect";
 import { useState } from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -225,10 +226,13 @@ export default function Home() {
 
           {/* Photo */}
           <div className="hero-photo-wrap">
-            <img
+            <Image
               src="/me.jpeg"
               alt="Carson Smith"
+              width={780}
+              height={1040}
               className="hero-photo"
+              priority
             />
           </div>
         </div>

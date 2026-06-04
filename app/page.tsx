@@ -226,7 +226,7 @@ export default function Home() {
           {/* Photo */}
           <div className="hero-photo-wrap">
             <img
-              src="/me.webp"
+              src="/me.jpeg"
               alt="Carson Smith"
               className="hero-photo"
             />

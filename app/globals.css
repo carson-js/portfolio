@@ -195,8 +195,7 @@
   }
 
   .hero-photo {
-    height: 320px;
-    aspect-ratio: unset;
+    aspect-ratio: 4 / 3;
     object-position: center 20%;
   }
 }

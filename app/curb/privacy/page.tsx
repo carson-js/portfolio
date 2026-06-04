@@ -123,7 +123,7 @@ export default function Privacy() {
       {/* Footer */}
       <footer className="border-t border-zinc-200 dark:border-zinc-800 py-12">
         <div className="max-w-2xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-zinc-400">© 2026 Carson Smith. Built in San Jose.</p>
+          <p className="text-sm text-zinc-400">© 2026 Carson Smith. Built in San Jose, California.</p>
           <a
             href="mailto:support@carsonjs.me"
             className="text-sm text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"

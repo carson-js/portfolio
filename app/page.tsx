@@ -1,142 +1,757 @@
+"use client";
+
+import Typewriter from "typewriter-effect";
+import { useState } from "react";
+import Image from "next/image";
+
 const projects = [
   {
     title: "Curb",
-    description: "A car management app for tracking maintenance, costs, and vehicle info. Built with SwiftUI and SwiftData.",
+    description: "A car management app for tracking maintenance, costs, and vehicle info.",
     tags: ["SwiftUI", "Swift", "SwiftData", "iOS"],
     link: "/curb",
+    num: "01",
   },
   {
     title: "Plannerific",
-    description: "A school planner iOS app for managing assignments, schedules, and deadlines. (full feature page coming soon)",
+    description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
     tags: ["SwiftUI", "iOS", "SwiftData", "Live Activities"],
     link: null,
+    num: "02",
   },
 ]
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-100 dark:border-zinc-800">
-        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="text-sm font-medium">Carson Smith</span>
-          <div className="flex items-center gap-6">
-            <a href="#about" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">About</a>
-            <a href="#projects" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">Projects</a>
-            <a href="#contact" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">Contact</a>
+    <main 
+      className={'min-h-screen'}
+      style={{ fontFamily: "'Space Mono', monospace", background: "var(--bg-page)", color: "var(--text-primary)" }}
+    >
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');`}</style>
+
+      {/* Navigation */}
+      <nav
+        className="sticky top-0 z-50"
+        style={{
+          background: "var(--bg-page)",
+          backdropFilter: "blur(12px)",
+          borderColor: "1px solid var(--border-color)",
+        }}
+      >
+        <div
+          className="mx-auto flex items-center justify-between"
+          style={{ maxWidth: 900, padding: "0 2rem", height: 56 }}
+        >
+          <span
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 13,
+              color: "#2563EB",
+              letterSpacing: "0.05em",
+            }}
+          >
+            carson smith
+          </span>
+          <div className="nav-links-desktop">
+            {["about", "projects", "skills", "contact"].map((section) => (
+              <a
+                key={section}
+                href={'#' + section}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+              >
+                {section}
+              </a>
+            ))}
           </div>
+
+            {/* Hamburger Button */}
+            <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>    
+        {/* Mobile Menu */}
+        <div className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
+          {["about", "projects", "skills", "contact"].map((section) => (
+            <a
+              key={section}
+              href={'#' + section}
+              onClick={() => setMenuOpen(false)}
+            >
+              {section}
+            </a>
+          ))}
         </div>
       </nav>
-      <section className="max-w-3xl mx-auto px-6 pt-24 pb-20">
-        <p className="text-sm text-zinc-500 mb-3">Computer Engineering @ SJSU</p>
-        <h1 className="text-5xl font-bold tracking-tight mb-4">
-          Hi, I'm Carson 🌊
-        </h1>
-        <p className="text-lg text-zinc-500 dark:text-zinc-400 max-w-lg mb-8">
-          I build iOS apps and am currently digging into systems-level programming with C and C++.
-          Currently a freshman with a focus on making things that actually work well.
-        </p>
-        <div className="flex gap-4">
-          <a
-            href="#projects"
-            className="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-sm font-medium hover:opacity-80 transition-opacity"
+
+      {/* Hero Section */}
+      <section className="hero-section" style={{ maxWidth: 900, margin: "0 auto" }}>
+        <div className="hero-inner">
+          {/* Text */}
+          <div className="hero-text">
+            <p
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 12,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2563EB",
+                marginBottom: "1.5rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem",
+              }}
             >
-              View projects
-            </a>
-            <a
-              href="#contact"
-              className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+              <span style={{ display: "block", width: 24, height: 1, background: "#2563EB" }} />
+              Computer Engineering @ SJSU
+            </p>
+
+            <h1
+              style={{
+                fontSize: "clamp(2.2rem, 4.5vw, 3rem)",
+                fontWeight: 600,
+                lineHeight: 1.02,
+                letterSpacing: "-0.03em",
+                marginBottom: "1.5rem",
+                color: "var(--text-primary)",
+              }}
             >
-              Contact me
-            </a>
-        </div>
-      </section>
-      <section id="about" className="max-w-3xl mx-auto px-6 py-20 border-t boarder-zinc-100 dark:boarder-zinc-800">
-        <p className="text-sm text-zinc-500 mb-3">About</p>
-        <h2 className="text-3xl font-bold tracking-tight mb-6">A bit about me</h2>
-        <div className="flex flex-col gap-4 text-zinc-600 dark:text-zinc-400 max-w-lg">
-          <p>
-            I'm a Computer Engineering student at San Jose State University,
-            expected to graduate in May 2029. I carry a 4.0 GPA and am part of
-            the Software and Computer Engineering Society and the Responsible
-            Computing Club.
-          </p>
-          <p>
-            I like understanding how things work under the hood. I'd rather
-            build and compile things manually than let an IDE do it for me.
-            Outside of class, I'm building iOS apps with SwiftUI and working
-            through systems programming, learning both C and C++.
-          </p>
-        </div>
-      </section>
-      <section id="projects" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-500 mb-3">Projects</p>
-        <h2 className="text-3xl font-bold tracking-tight mb-8">Things I've built</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {projects.map((project) => {
-            const Card = (
-              <div
-                key={project.title}
-                className="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col gap-2 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
+              Hi, I&apos;m Carson —<br />
+              <span className="typewriter-wrap">
+                <span style={{ color: "#2563EB" }}>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "a student.",
+                        "a developer.",
+                        "a programmer.",
+                        "an iOS engineer.",
+                        "a builder.",
+                        "a systems thinker.",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 80,
+                      deleteSpeed: 40,
+                    }}
+                  />
+                </span>
+              </span>
+            </h1>
+
+            <p
+              className="hero-body"
+              style={{
+                fontSize: "1.05rem",
+                color: "var(--text-muted)",
+                maxWidth: 480,
+                lineHeight: 1.75,
+                fontWeight: 300,
+              }}
+            >
+              I build{" "}
+              <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>iOS apps</span> and
+              dig into systems-level programming with C and C++. Freshman with a 4.0, focused on
+              making things that actually work well.
+            </p>
+
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <a
+                href="#projects"
+                style={{
+                  display: "inline-block",
+                  padding: "0.65rem 1.4rem",
+                  background: "#2563EB",
+                  color: "#fff",
+                  borderRadius: 6,
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: "0.02em",
+                  transition: "background 0.2s, transform 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#1D4ED8";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "#2563EB";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
               >
-                <h3 className="font-semibold text-lg">{project.title}</h3>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 flex-1">{project.description}</p>
-                <div className="flex gap-2 flex-wrap mt-2">
-                  {project.tags.map((tag) => (
+                View projects
+              </a>
+              <a
+                href="#contact"
+                style={{
+                  display: "inline-block",
+                  padding: "0.65rem 1.4rem",
+                  border: "1px solid var(--border-color)",
+                  color: "var(--text-muted)",
+                  borderRadius: 6,
+                  fontSize: 14,
+                  textDecoration: "none",
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: "0.02em",
+                  background: "var(--btn-ghost-bg)",
+                  transition: "border-color 0.2s, color 0.2s, transform 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-hover)";
+                  e.currentTarget.style.color = "var(--text-primary)";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-color)";
+                  e.currentTarget.style.color = "var(--text-muted)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+
+          {/* Photo */}
+          <div className="hero-photo-wrap">
+            <Image
+              src="/me.jpeg"
+              alt="Carson Smith"
+              width={780}
+              height={1040}
+              className="hero-photo"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+      
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* About Section */}
+      <section id="about" className="two-col-section">
+        <span
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--text-muted-light)",
+            paddingTop: "0.4rem",
+          }}
+        >
+          About
+        </span>
+        <div>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "1.25rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)",
+            }}
+          >
+            A bit about me
+          </h2>
+          <p
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "0.97rem",
+              lineHeight: 1.8,
+              marginBottom: "1rem",
+              fontWeight: 300,
+            }}
+          >
+            I&apos;m a Computer Engineering student at{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>
+              San José State University
+            </span>
+            , expected to graduate in May 2029. I&apos;m part of the Software and Computer
+            Engineering Society and the Responsible Computing Club.
+          </p>
+          <p
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "0.97rem",
+              lineHeight: 1.8,
+              fontWeight: 300,
+            }}
+          >
+            I like understanding how things work under the hood — I&apos;d rather build and compile
+            things manually than let an IDE do it for me. Outside of class I&apos;m building iOS
+            apps with{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>SwiftUI</span> and
+            working through systems programming in C and C++.
+          </p>
+          <div style={{ display: "flex", gap: "2.5rem", marginTop: "2rem", flexWrap: "wrap" }}>
+            {[
+              { num: "4.0", label: "GPA" },
+              { num: "2", label: "iOS apps" },
+              { num: "May 2029", label: "Graduation" },
+            ].map(({ num, label }) => (
+              <div key={label}>
+                <span
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: "1.6rem",
+                    fontWeight: 700,
+                    color: "#2563EB",
+                    display: "block",
+                    lineHeight: 1,
+                    marginBottom: "0.3rem",
+                  }}
+                >
+                  {num}
+                </span>
+                <span
+                  style={{
+                    fontSize: 12,
+                    color: "var(--text-muted-light)",
+                    fontFamily: "'Space Mono', monospace",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+ 
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* Projects Section */}
+      <section id="projects" className="projects-section" style={{ maxWidth: 900, margin: "0 auto", padding: "5rem 2rem" }}>
+        <div className="two-col-header">
+          <span
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--text-muted-light)",
+            }}
+          >
+            Projects
+          </span>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              color: "var(--text-primary)",
+            }}
+          >
+            Things I&apos;ve built
+          </h2>
+        </div>
+ 
+        {projects.map((project) => {
+          const cardContent = (
+            <>
+              <p
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 11,
+                  color: "#2563EB",
+                  letterSpacing: "0.1em",
+                  marginBottom: "0.5rem",
+                  opacity: 0.6,
+                }}
+              >
+                {project.num}
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "space-between",
+                  gap: "1.5rem",
+                }}
+              >
+                <div style={{ flex: 1 }}>
+                  <h3
+                    style={{
+                      fontSize: "1.2rem",
+                      fontWeight: 600,
+                      letterSpacing: "-0.015em",
+                      marginBottom: "0.45rem",
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "0.9rem",
+                      color: "var(--text-muted)",
+                      lineHeight: 1.65,
+                      fontWeight: 300,
+                      maxWidth: 460,
+                    }}
+                  >
+                    {project.description}
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.45rem",
+                      flexWrap: "wrap",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        style={{
+                          fontFamily: "'Space Mono', monospace",
+                          fontSize: 11,
+                          padding: "0.22rem 0.6rem",
+                          borderRadius: 4,
+                          background: "var(--tag-bg)",
+                          border: "1px solid var(--tag-border)",
+                          color: "var(--tag-text)",
+                          letterSpacing: "0.03em",
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {project.link && (
+                  <span
+                    className="project-arrow"
+                    style={{
+                      fontSize: "1.25rem",
+                      color: "#2563EB",
+                      flexShrink: 0,
+                      fontFamily: "'Space Mono', monospace",
+                      opacity: 0,
+                      transform: "translate(-4px, 4px)",
+                      transition: "opacity 0.2s, transform 0.2s",
+                    }}
+                  >
+                    ↗
+                  </span>
+                )}
+              </div>
+            </>
+          );
+ 
+          const sharedStyle: React.CSSProperties = {
+            border: "1px solid var(--border-color)",
+            borderRadius: 12,
+            padding: "1.75rem",
+            marginBottom: "0.75rem",
+            background: "var(--bg-surface)",
+            position: "relative",
+          };
+ 
+          return project.link ? (
+            <a
+              key={project.title}
+              href={project.link}
+              style={{
+                ...sharedStyle,
+                display: "block",
+                textDecoration: "none",
+                color: "inherit",
+                transition: "border-color 0.2s, box-shadow 0.2s, transform 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-hover)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(37,99,235,0.06)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                const arrow = e.currentTarget.querySelector(".project-arrow") as HTMLElement;
+                if (arrow) {
+                  arrow.style.opacity = "1";
+                  arrow.style.transform = "translate(0, 0)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-color)";
+                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.transform = "translateY(0)";
+                const arrow = e.currentTarget.querySelector(".project-arrow") as HTMLElement;
+                if (arrow) {
+                  arrow.style.opacity = "0";
+                  arrow.style.transform = "translate(-4px, 4px)";
+                }
+              }}
+            >
+              {cardContent}
+            </a>
+          ) : (
+            <div key={project.title} style={{ ...sharedStyle, opacity: 0.5 }}>
+              <span
+                style={{
+                  position: "absolute",
+                  top: "1.1rem",
+                  right: "1.1rem",
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--text-muted-light)",
+                  border: "1px solid var(--border-color)",
+                  borderRadius: 4,
+                  padding: "0.2rem 0.55rem",
+                  background: "var(--soon-bg)",
+                }}
+              >
+                Soon
+              </span>
+              {cardContent}
+            </div>
+          );
+        })}
+      </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* Skills */}
+      <section id="skills" className="two-col-section">
+        <span
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--text-muted-light)",
+            paddingTop: "0.4rem",
+          }}
+        >
+          Skills
+        </span>
+        <div>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "0.75rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)",
+            }}
+          >
+            What I work with
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            {[
+              {
+                category: "Languages",
+                skills: ["C", "C++", "Python", "Swift"],
+              },
+              {
+                category: "iOS & Mobile",
+                skills: ["Swift", "SwiftUI", "SwiftData", "Xcode"],
+              },
+              {
+                category: "Web",
+                skills: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+              },
+              {
+                category: "Tools",
+                skills: ["Git", "GitHub", "SOLIDWORKS", "Autodesk Fusion 360", "NI Multisim"],
+              },
+              {
+                category: "Hardware",
+                skills: ["Breadboarding", "Logic Probe", "Oscilloscope", "Integrated Circuits", "Function Generator", "Soldering"],
+              },
+            ].map(({ category, skills }) => (
+              <div key={category} style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <span
+                  style={{
+                    fontFamily: "var(--font-space-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "var(--text-muted-light)",
+                  }}
+                >
+                  {category}
+                </span>
+                <div style={{ display: "flex", gap: "0.45rem", flexWrap: "wrap" }}>
+                  {skills.map((skill) => (
                     <span
-                      key={tag}
-                      className="text-xs px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-full"
+                      key={skill}
+                      style={{
+                        fontFamily: "var(--font-space-mono)",
+                        fontSize: 12,
+                        padding: "0.3rem 0.75rem",
+                        borderRadius: 4,
+                        background: "var(--tag-bg)",
+                        border: "1px solid var(--tag-border)",
+                        color: "var(--tag-text)",
+                        letterSpacing: "0.03em",
+                      }}
                     >
-                      {tag}
+                      {skill}
                     </span>
                   ))}
                 </div>
               </div>
-            );
+            ))}
+          </div>
+        </div>
+      </section>
 
-            return project.link ? (
-              <a key={project.title} href={project.link} className="group">
-                {Card}
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* Contact */}
+      <section id="contact" className="two-col-section">
+        <span
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--text-muted-light)",
+            paddingTop: "0.4rem",
+          }}
+        >
+          Contact
+        </span>
+        <div>
+          <h2
+            style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "0.75rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)",
+            }}
+          >
+            Get in touch
+          </h2>
+          <p
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "0.95rem",
+              lineHeight: 1.75,
+              marginBottom: "2rem",
+              fontWeight: 300,
+              maxWidth: 400,
+            }}
+          >
+            Open to chatting about projects, internships, or just cool tech. Best reached by email.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            <a
+              href="mailto:me@carsonjs.me"
+              style={{
+                display: "inline-block",
+                padding: "0.65rem 1.4rem",
+                background: "#2563EB",
+                color: "#fff",
+                borderRadius: 6,
+                fontSize: 14,
+                fontWeight: 500,
+                textDecoration: "none",
+                fontFamily: "'Space Mono', monospace",
+                letterSpacing: "0.02em",
+                transition: "background 0.2s, transform 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#1D4ED8";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#2563EB";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              me@carsonjs.me
+            </a>
+            {[
+              { label: "GitHub", href: "https://www.github.com/carson-js" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/carson-js" },
+            ].map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  padding: "0.65rem 1.4rem",
+                  border: "1px solid var(--border-color)",
+                  color: "var(--text-muted)",
+                  borderRadius: 6,
+                  fontSize: 14,
+                  textDecoration: "none",
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: "0.02em",
+                  background: "var(--btn-ghost-bg)",
+                  transition: "border-color 0.2s, color 0.2s, transform 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-hover)";
+                  e.currentTarget.style.color = "var(--text-primary)";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-color)";
+                  e.currentTarget.style.color = "var(--text-muted)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                {label}
               </a>
-            ) : (
-              <div key={project.title}>{Card}</div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </section>
-      <section id="contact" className="max-w-3xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-500 mb-3">Contact</p>
-        <h2 className="text-3xl font-bold tracking-tight mb-4">Get in touch</h2>
-        <p className="text-zinc-500 dark:text-zinc-400 max-w-md mb-8">
-          I'm always open to chatting about projects, opportunities, or just cool tech.
-          The best way to reach me is by email.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a
-          href="mailto:me@carsonjs.me"
-          className="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-sm font-medium hover:opacity-80 transition-opacity w-fit"
+
+      {/* Footer */}
+      <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p
+            className="text-sm text-zinc-400 text-center sm:text-left"
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 13,
+              textDecoration: "none",
+              color: "var(--text-muted)",
+            }}
           >
-            me@carsonjs.me
-          </a> 
-          <a
-            href="https://www.github.com/carson-js"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg0zinc-900 transition-colors w-fit"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/carson-js"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-zinc-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg0zinc-900 transition-colors w-fit"
-          >
-            LinkedIn
-          </a>
+            © 2026 Carson Smith. Built in San Jose, California.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+            <a 
+              href="mailto:support@carsonjs.me"
+              style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              support@carsonjs.me
+            </a>
+          </div>
         </div>
-      </section>
-      <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-sm text-zinc-400">© 2026 Carson. Built with Next.js and Tailwind.</p>
       </footer>
     </main>
   );

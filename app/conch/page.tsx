@@ -136,7 +136,7 @@ export default function ConchPage() {
             src="/conch/conch-term-dark.png"
             alt="Conch shell running the about command, showing ASCII art logo, version 0.4.0, and the conch prompt"
             width={560}
-            height={500}
+            height={400}
             priority
             style={{ width: "100%", height: "auto", display: "block" }}
           />
@@ -144,6 +144,46 @@ export default function ConchPage() {
       </section>
 
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+      
+      {/* Overview */}
+      <section className="two-col-section">
+        <span style={{ 
+          fontFamily: "'Space Mono', monospace", 
+          fontSize: 11, letterSpacing: "0.14em", 
+          textTransform: "uppercase", 
+          color: "var(--text-muted-light)", 
+          paddingTop: "0.4rem" 
+          }}
+        >
+          Overview
+        </span>
+        <div>
+          <h2 style={{ 
+              fontSize: "1.85rem", 
+              fontWeight: 600, 
+              letterSpacing: "-0.02em", 
+              marginBottom: "1.25rem", 
+              lineHeight: 1.2, 
+              color: "var(--text-primary)" 
+            }}
+          >
+            A shell from the ground up
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "1rem", fontWeight: 300 }}>
+            Conch is built entirely in C without any shell library, interfacing directly with the OS
+            through{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>POSIX system calls</span>{" "}
+            — managing process creation, executable loading, and memory manually.
+          </p>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, fontWeight: 300 }}>
+            The goal was to understand what actually happens between pressing Enter and seeing output:
+            how the shell tokenizes input, why some commands must run inside the shell process (like{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>cd</span>), and how{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>fork + execvp</span> hands
+            off execution to an external program.
+          </p>
+        </div>
+      </section>
 
     </main>
   );

@@ -1,6 +1,5 @@
 "use client"
 
-import "./conch.css";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -153,34 +152,6 @@ export default function Conch() {
                 }}
               >
                 View projects
-              </a>
-              <a
-                href="#contact"
-                style={{
-                  display: "inline-block",
-                  padding: "0.65rem 1.4rem",
-                  border: "1px solid var(--border-color)",
-                  color: "var(--text-muted)",
-                  borderRadius: 6,
-                  fontSize: 14,
-                  textDecoration: "none",
-                  fontFamily: "'Space Mono', monospace",
-                  letterSpacing: "0.02em",
-                  background: "var(--btn-ghost-bg)",
-                  transition: "border-color 0.2s, color 0.2s, transform 0.15s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "var(--border-hover)";
-                  e.currentTarget.style.color = "var(--text-primary)";
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--border-color)";
-                  e.currentTarget.style.color = "var(--text-muted)";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                Get in touch
               </a>
             </div>
           </div>

@@ -60,84 +60,86 @@ export default function Conch() {
       </nav>
 
       {/* Hero */}
-      <section className="hero-section" style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div className="hero-inner">
+      <section className="hero-section">
+        <div>
           {/* Text */}
-          <div className="hero-text">
-            <p
+          <p
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 12,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "var(--green)",
+              marginBottom: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+            }}
+          >
+            <span style={{ display: "block", width: 24, height: 1, background: "var(--green)" }} />
+            Systems Project
+          </p>
+
+          <h1
+            style={{
+              fontSize: "clamp(2.2rem, 4.5vw, 3rem)",
+              fontWeight: 600,
+              lineHeight: 1.02,
+              letterSpacing: "-0.03em",
+              marginBottom: "1.5rem",
+              color: "var(--text-primary)",
+            }}
+          >
+            <span style={{ color: "var(--green)" }}>Conch</span><br />
+            Unix Shell
+          </h1>
+
+          <p
+            style={{ 
+              fontSize: "0.97rem", 
+              color: "var(--text-muted)", 
+              lineHeight: 1.75, 
+              fontWeight: 300, 
+              marginBottom: "1.75rem" 
+            }}
+          >
+            A lightweight Unix shell written from scratch in C — implementing a full
+            read-eval-print loop, <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>POSIX process forking</span>, PATH-based
+            command resolution, and builtin commands.
+          </p>
+          
+          {/* Github Button */}
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <a
+              href="https://github.com/carson-js/conch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2"
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 12,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "var(--green)",
-                marginBottom: "1.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.75rem",
-              }}
-            >
-              <span style={{ display: "block", width: 24, height: 1, background: "var(--green)" }} />
-              Systems Project
-            </p>
-
-            <h1
-              style={{
-                fontSize: "clamp(2.2rem, 4.5vw, 3rem)",
-                fontWeight: 600,
-                lineHeight: 1.02,
-                letterSpacing: "-0.03em",
-                marginBottom: "1.5rem",
-                color: "var(--text-primary)",
-              }}
-            >
-              <span style={{ color: "var(--green)" }}>Conch</span><br />
-              Unix Shell
-            </h1>
-
-            <p
-              className="hero-body"
-              style={{
-                fontSize: "1.05rem",
+                fontSize: 13,
+                padding: "0.6rem 1.1rem",
+                border: "1px solid var(--border-color)",
+                borderRadius: 6,
+                background: "var(--bg-surface)",
                 color: "var(--text-muted)",
-                maxWidth: 480,
-                lineHeight: 1.75,
-                fontWeight: 300,
+                textDecoration: "none",
+                transition: "border-color 0.2s, color 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--green-border-hover)";
+                e.currentTarget.style.color = "var(--text-primary)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-color)";
+                e.currentTarget.style.color = "var(--text-muted)";
               }}
             >
-              A functional Unix shell written from scratch in C — implementing a full
-              read-eval-print loop, <strong>POSIX process forking</strong>, PATH-based
-              command resolution, and builtin commands.
-            </p>
-
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <a
-                href="#projects"
-                style={{
-                  display: "inline-block",
-                  padding: "0.65rem 1.4rem",
-                  background: "var(--green)",
-                  color: "#fff",
-                  borderRadius: 6,
-                  fontSize: 14,
-                  fontWeight: 500,
-                  textDecoration: "none",
-                  fontFamily: "'Space Mono', monospace",
-                  letterSpacing: "0.02em",
-                  transition: "background 0.2s, transform 0.15s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "var(--green-hover)";
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "var(--green)";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                View projects
-              </a>
-            </div>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              github.com/carson-js/conch
+            </a>
           </div>
 
           {/* Screenshot */}

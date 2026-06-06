@@ -10,6 +10,7 @@ export default function Conch() {
       className={'min-h-screen'} 
       style={{ fontFamily: "'Space Mono', monospace", background: "var(--bg-page)", color: "var(--text-primary)" }}
     >
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');`}</style>
       {/* Navigation */}
       <nav
         className="sticky top-0 z-50"
@@ -23,7 +24,8 @@ export default function Conch() {
           className="mx-auto flex items-center justify-between"
           style={{ maxWidth: 900, padding: "0 2rem", height: 56 }}
         >
-          <span
+          <a
+            href="/"
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 13,
@@ -32,20 +34,13 @@ export default function Conch() {
             }}
           >
             carson smith
-          </span>
+          </a>
           <div className="nav-links-desktop">
-            {["about", "projects", "skills", "contact"].map((section) => (
+            {["about", "projects", "contact"].map((section) => (
               <a
                 key={section}
-                href={'#' + section}
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 13,
-                  color: "var(--text-muted)",
-                  textDecoration: "none",
-                  letterSpacing: "0.03em",
-                  transition: "color 0.2s",
-                }}
+                href={`/#${section}`}
+                style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "var(--text-muted)", textDecoration: "none", letterSpacing: "0.03em", transition: "color 0.2s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
               >
@@ -53,24 +48,13 @@ export default function Conch() {
               </a>
             ))}
           </div>
-
-            {/* Hamburger Button */}
-            <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-              <span />
-              <span />
-              <span />
-            </button>
-          </div>    
-        {/* Mobile Menu */}
+          <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+            <span /><span /><span />
+          </button>
+        </div>
         <div className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
-          {["overview", "logic", "structure", "planned"].map((section) => (
-            <a
-              key={section}
-              href={'#' + section}
-              onClick={() => setMenuOpen(false)}
-            >
-              {section}
-            </a>
+          {["about", "projects", "contact"].map((section) => (
+            <a key={section} href={`/#${section}`} onClick={() => setMenuOpen(false)}>{section}</a>
           ))}
         </div>
       </nav>

@@ -228,3 +228,42 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Green accent variables for the Conch page */
+:root {
+  --green: #16a34a;
+  --green-tag-bg: rgba(22, 163, 74, 0.07);
+  --green-tag-border: rgba(22, 163, 74, 0.18);
+  --green-tag-text: #15803d;
+  --green-border-hover: rgba(22, 163, 74, 0.35);
+  --bg-surface-2: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --green-tag-bg: rgba(22, 163, 74, 0.12);
+    --green-tag-border: rgba(22, 163, 74, 0.25);
+    --green-tag-text: #4ade80;
+    --green-border-hover: rgba(22, 163, 74, 0.4);
+    --bg-surface-2: #1e1e1e;
+  }
+}
+
+/* Conch hero  */
+.conch-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+@media (max-width: 680px) {
+  .conch-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}

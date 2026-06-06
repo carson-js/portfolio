@@ -108,6 +108,32 @@ export default function Conch() {
             command resolution, and builtin commands.
           </p>
           
+          {/* Badges */}
+          <div className="flex flex-wrap gap-2" style={{ marginBottom: "1.5rem" }}>
+            {[
+              { label: "v0.4.0", green: true },
+              { label: "C", green: true },
+              { label: "CMake", green: false },
+              { label: "MIT License", green: false },
+            ].map(({ label, green }) => (
+              <span
+                key={label}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 11,
+                  padding: "0.22rem 0.6rem",
+                  borderRadius: 4,
+                  letterSpacing: "0.03em",
+                  background: green ? "var(--green-tag-bg)" : "var(--tag-bg)",
+                  border: `1px solid ${green ? "var(--green-tag-border)" : "var(--tag-border)"}`,
+                  color: green ? "var(--green-tag-text)" : "var(--tag-text)",
+                }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+          
           {/* Github Button */}
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <a

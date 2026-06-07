@@ -16,21 +16,40 @@ export default function ConchClient() {
       {/*  Navigation  */}
       <nav
         className="sticky top-0 z-50"
-        style={{ background: "var(--nav-bg)", backdropFilter: "blur(12px)", borderBottom: "1px solid var(--border-color)" }}
+        style={{
+          background: "var(--bg-page)",
+          backdropFilter: "blur(12px)",
+          borderColor: "1px solid var(--border-color)",
+        }}
       >
-        <div className="mx-auto flex items-center justify-between" style={{ maxWidth: 900, padding: "0 2rem", height: 56 }}>
+        <div
+          className="mx-auto flex items-center justify-between"
+          style={{ maxWidth: 900, padding: "0 2rem", height: 56 }}
+        >
           <a
             href="/"
-            style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "#2563EB", letterSpacing: "0.05em", textDecoration: "none" }}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 13,
+              color: "#2563EB",
+              letterSpacing: "0.05em",
+            }}
           >
             carson smith
           </a>
           <div className="nav-links-desktop">
-            {["about", "projects", "contact"].map((section) => (
+            {["about", "projects", "skills", "contact"].map((section) => (
               <a
                 key={section}
-                href={`/#${section}`}
-                style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "var(--text-muted)", textDecoration: "none", letterSpacing: "0.03em", transition: "color 0.2s" }}
+                href={'/#' + section}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
               >
@@ -38,13 +57,24 @@ export default function ConchClient() {
               </a>
             ))}
           </div>
-          <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-            <span /><span /><span />
-          </button>
-        </div>
+
+            {/* Hamburger Button */}
+            <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>    
+        {/* Mobile Menu */}
         <div className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
-          {["about", "projects", "contact"].map((section) => (
-            <a key={section} href={`/#${section}`} onClick={() => setMenuOpen(false)}>{section}</a>
+          {["about", "projects", "skills", "contact"].map((section) => (
+            <a
+              key={section}
+              href={'/#' + section}
+              onClick={() => setMenuOpen(false)}
+            >
+              {section}
+            </a>
           ))}
         </div>
       </nav>
@@ -75,7 +105,7 @@ export default function ConchClient() {
           <div className="flex flex-wrap gap-2" style={{ marginBottom: "1.5rem" }}>
             {[
               { label: "v0.4.0", green: true },
-              { label: "C", green: true },
+              { label: "C", green: false },
               { label: "CMake", green: false },
               { label: "MIT License", green: false },
             ].map(({ label, green }) => (
@@ -309,6 +339,49 @@ export default function ConchClient() {
         </div>
       </section>
 
+      {/*  Footer  */}
+      <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p
+            className="text-sm text-zinc-400 text-center sm:text-left"
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 13,
+              textDecoration: "none",
+              color: "var(--text-muted)",
+            }}
+          >
+            © 2026 Carson Smith. Built in San Jose, California.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+            <a
+              href="https://github.com/carson-js/conch"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "var(--text-muted)", textDecoration: "none", letterSpacing: "0.03em", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              github.com/carson-js/conch
+            </a>
+            <a 
+              href="/#contact"
+              style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              contact
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

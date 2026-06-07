@@ -289,3 +289,15 @@ body {
 .conch-file-row + .conch-file-row {
   border-top: 1px solid var(--border-color);
 }
+
+/* Features grid */
+.conch-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 540px) {
+  .conch-features-grid { grid-template-columns: 1fr; }
+}

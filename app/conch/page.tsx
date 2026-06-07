@@ -133,11 +133,21 @@ export default function ConchPage() {
         {/* Screenshot */}
         <div>
           <Image
+            src="/conch/conch-term-light.png"
+            alt="Conch shell running the about command, showing ASCII art logo, version 0.4.0, and the conch prompt"
+            width={560}
+            height={400}
+            priority
+            className="dark:hidden"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+          <Image
             src="/conch/conch-term-dark.png"
             alt="Conch shell running the about command, showing ASCII art logo, version 0.4.0, and the conch prompt"
             width={560}
             height={400}
             priority
+            className="hidden dark:block"
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
@@ -237,7 +247,7 @@ export default function ConchPage() {
 
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
-      {/* ── Structure ── */}
+      {/*  Structure  */}
       <section className="two-col-section">
         <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-muted-light)", paddingTop: "0.4rem" }}>
           Structure
@@ -271,7 +281,42 @@ export default function ConchPage() {
 
       <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
 
-      
+      {/* ── Planned ── */}
+      <section className="two-col-section">
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-muted-light)", paddingTop: "0.4rem" }}>
+          What&apos;s Next
+        </span>
+        <div>
+          <h2 style={{ fontSize: "1.85rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1.25rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            Planned features
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "1rem", fontWeight: 300 }}>
+            Conch is actively being developed. Each of these features requires a deeper dive into
+            how real shells handle I/O and process management.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {[
+              { token: "> <", label: "I/O redirection", desc: "Output and input redirection" },
+              { token: "|", label: "Pipes", desc: "Chain commands with pipe() and dup2()" },
+              { token: "↑", label: "Command history", desc: "Up-arrow navigation through past commands" },
+              { token: "$VAR", label: "Env expansion", desc: "Expand $HOME, $PATH, and other variables" },
+              { token: "&", label: "Background jobs", desc: "Run processes without blocking the prompt" },
+            ].map((item, i, arr) => (
+              <div
+                key={item.label}
+                className="flex items-center gap-3"
+                style={{ padding: "0.65rem 0", borderBottom: i < arr.length - 1 ? "1px solid var(--border-color)" : "none" }}
+              >
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "var(--green-tag-text)", background: "var(--green-tag-bg)", border: "1px solid var(--green-tag-border)", borderRadius: 4, padding: "0.1rem 0.45rem", flexShrink: 0 }}>
+                  {item.token}
+                </span>
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 12.5, color: "var(--text-primary)", fontWeight: 500 }}>{item.label}</span>
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: "var(--text-muted-light)", marginLeft: "auto" }}>{item.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
     </main>
   );

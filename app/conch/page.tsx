@@ -203,6 +203,37 @@ export default function ConchPage() {
           </div>
         </div>
       </section>
+      
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* How It Works */}
+      <section className="two-col-section">
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-muted-light)", paddingTop: "0.4rem" }}>
+          How It Works
+        </span>
+        <div>
+          <h2 style={{ fontSize: "1.85rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1.25rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            Command pipeline
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "1rem", fontWeight: 300 }}>
+            Every command travels through a short, focused pipeline: tokenized into an argument
+            array, checked against the builtin table, then either executed in-process or handed off
+            to a forked child.
+          </p>
+
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginTop: "1.5rem", fontWeight: 300 }}>
+            External commands are executed by forking a child process with{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>fork()</span> and
+            replacing it via{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>execvp()</span>. The
+            parent blocks on{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>waitpid()</span> until
+            the child exits. Builtins like{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>cd </span>must run
+            in-process — a child can&apos;t change the parent&apos;s working directory.
+          </p>
+        </div>
+      </section>
 
     </main>
   );

@@ -235,6 +235,44 @@ export default function ConchPage() {
         </div>
       </section>
 
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      {/* ── Structure ── */}
+      <section className="two-col-section">
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-muted-light)", paddingTop: "0.4rem" }}>
+          Structure
+        </span>
+        <div>
+          <h2 style={{ fontSize: "1.85rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1.25rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            Modular by design
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "0rem", fontWeight: 300 }}>
+            The codebase is split across focused source files so each concern — parsing, execution,
+            builtins — lives in exactly one place.
+          </p>
+          <div className="conch-file-tree">
+            {[
+              { name: "conch/", indent: false, desc: "", highlight: false },
+              { name: "main.c", indent: true, desc: "entry point & REPL loop", highlight: false },
+              { name: "parser.c / .h", indent: true, desc: "tokenizes input → argv", highlight: true },
+              { name: "shell.c / .h", indent: true, desc: "routes builtins or forks", highlight: true },
+              { name: "builtins.c / .h", indent: true, desc: "cd, exit, about", highlight: true },
+              { name: "CMakeLists.txt", indent: true, desc: "build config", highlight: false },
+            ].map((row) => (
+              <div className="conch-file-row" key={row.name}>
+                {row.indent && <span style={{ color: "var(--border-color)", userSelect: "none" }}>├─</span>}
+                <span style={{ color: row.highlight ? "var(--green-tag-text)" : "var(--text-primary)" }}>{row.name}</span>
+                {row.desc && <span style={{ color: "var(--text-muted-light)", fontSize: 11, marginLeft: "auto" }}>{row.desc}</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+
+      
+
     </main>
   );
 }

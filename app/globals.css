@@ -267,3 +267,25 @@ body {
     padding: 3rem 1.5rem 2.5rem;
   }
 }
+
+/* File tree */
+.conch-file-tree {
+  margin-top: 1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.conch-file-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 12.5px;
+}
+
+.conch-file-row + .conch-file-row {
+  border-top: 1px solid var(--border-color);
+}

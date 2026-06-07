@@ -182,6 +182,25 @@ export default function ConchPage() {
             <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>fork + execvp</span> hands
             off execution to an external program.
           </p>
+
+          <div className="conch-features-grid">
+            {[
+              { label: "REPL", desc: "Interactive prompt with a read-eval-print loop" },
+              { label: "PATH resolution", desc: "Resolves external commands across $PATH" },
+              { label: "Builtins", desc: "cd, exit, and about run in-process" },
+              { label: "Error handling", desc: "Graceful handling of empty input and EOF" },
+            ].map((f) => (
+              <div
+                key={f.label}
+                style={{ background: "var(--bg-surface)", border: "1px solid var(--border-color)", borderRadius: 8, padding: "1rem 1.1rem", marginTop: "1rem", transition: "border-color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--green-border-hover)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
+              >
+                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: "var(--green-tag-text)", marginBottom: "0.35rem" }}>{f.label}</div>
+                <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.6 }}>{f.desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -13,11 +13,18 @@ const projects = [
     num: "01",
   },
   {
+    title: "Conch",
+    description: "A lightweight Unix shell written in C from scratch, implementing a full REPL with process forking, PATH-based command resolution, and builtin commands.",
+    tags: ["C", "Unix Shell", "Systems Programming"],
+    link: "/conch",
+    num: "02",
+  },
+  {
     title: "Plannerific",
     description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
     tags: ["SwiftUI", "iOS", "SwiftData", "Live Activities"],
     link: null,
-    num: "02",
+    num: "03",
   },
 ]
 

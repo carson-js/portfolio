@@ -228,3 +228,76 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Green accent variables for the Conch page */
+:root {
+  --green: #16a34a;
+  --green-tag-bg: rgba(22, 163, 74, 0.07);
+  --green-tag-border: rgba(22, 163, 74, 0.18);
+  --green-tag-text: #15803d;
+  --green-border-hover: rgba(22, 163, 74, 0.35);
+  --bg-surface-2: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --green-tag-bg: rgba(22, 163, 74, 0.12);
+    --green-tag-border: rgba(22, 163, 74, 0.25);
+    --green-tag-text: #4ade80;
+    --green-border-hover: rgba(22, 163, 74, 0.4);
+    --bg-surface-2: #1e1e1e;
+  }
+}
+
+/* Conch hero  */
+.conch-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+@media (max-width: 680px) {
+  .conch-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}
+
+/* File tree */
+.conch-file-tree {
+  margin-top: 1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.conch-file-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 12.5px;
+}
+
+.conch-file-row + .conch-file-row {
+  border-top: 1px solid var(--border-color);
+}
+
+/* Features grid */
+.conch-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 540px) {
+  .conch-features-grid { grid-template-columns: 1fr; }
+}

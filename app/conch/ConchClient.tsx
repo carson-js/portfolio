@@ -104,7 +104,7 @@ export default function ConchClient() {
           {/* Badges */}
           <div className="flex flex-wrap gap-2" style={{ marginBottom: "1.5rem" }}>
             {[
-              { label: "v0.4.0", green: true },
+              { label: "v0.6.0", green: true },
               { label: "C", green: false },
               { label: "CMake", green: false },
               { label: "MIT License", green: false },
@@ -219,6 +219,8 @@ export default function ConchClient() {
               { label: "REPL", desc: "Interactive prompt with a read-eval-print loop" },
               { label: "PATH resolution", desc: "Resolves external commands across $PATH" },
               { label: "Builtins", desc: "cd, exit, and about run in-process" },
+              { label: "Redirection", desc: "Output and input redirection with > and <" },
+              { label: "Pipes", desc: "Chain N commands consecutively with |" },
               { label: "Error handling", desc: "Graceful handling of empty input and EOF" },
             ].map((f) => (
               <div
@@ -317,8 +319,6 @@ export default function ConchClient() {
           </p>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {[
-              { token: "> <", label: "I/O redirection", desc: "Output and input redirection" },
-              { token: "|", label: "Pipes", desc: "Chain commands with pipe() and dup2()" },
               { token: "↑", label: "Command history", desc: "Up-arrow navigation through past commands" },
               { token: "$VAR", label: "Env expansion", desc: "Expand $HOME, $PATH, and other variables" },
               { token: "&", label: "Background jobs", desc: "Run processes without blocking the prompt" },

@@ -320,6 +320,50 @@ export default function CrumbClient() {
           </div>
         </div>
       </section>
+
+      {/*  Footer  */}
+      <footer style={{ borderTop: "1px solid var(--border-color)", padding: "1.75rem 2rem" }}>
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p
+            className="text-sm text-zinc-400 text-center sm:text-left"
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 13,
+              textDecoration: "none",
+              color: "var(--text-muted)",
+            }}
+          >
+            © 2026 Carson Smith. Built in San Jose, California.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+            <a
+              href="https://github.com/carson-js/crumb"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "var(--text-muted)", textDecoration: "none", letterSpacing: "0.03em", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              github.com/carson-js/crumb
+            </a>
+            <a
+              href="/#contact"
+              style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 13,
+                  color: "var(--text-muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.03em",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              contact
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

@@ -161,6 +161,68 @@ export default function CrumbClient() {
           </a>
         </div>
       </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+ 
+      {/* Overview */}
+      <section className="two-col-section">
+        <span style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 11, letterSpacing: "0.14em",
+          textTransform: "uppercase",
+          color: "var(--text-muted-light)",
+          paddingTop: "0.4rem"
+          }}
+        >
+          Overview
+        </span>
+        <div>
+          <h2 style={{
+              fontSize: "1.85rem",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginBottom: "1.25rem",
+              lineHeight: 1.2,
+              color: "var(--text-primary)"
+            }}
+          >
+            The core of an emulator
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "1rem", fontWeight: 300 }}>
+            Crumb models the CHIP-8 virtual machine directly in C — 16 general-purpose registers,
+            4KB of memory, a 16-level stack, an index register, and a program counter — and executes
+            original CHIP-8 ROMs{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>instruction by instruction</span>.
+          </p>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, fontWeight: 300 }}>
+            The goal was to understand emulation at a low level: how opcodes get decoded, how fonts
+            get memory-mapped, and how the{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>interpreter pattern</span>{" "}
+            underneath CHIP-8 generalizes to most virtual machines.
+          </p>
+ 
+          <div className="crumb-features-grid">
+            {[
+              { label: "CPU core", desc: "16 registers, 4KB memory, 16-level stack, PC & index register" },
+              { label: "Full instruction set", desc: "All 35 CHIP-8 opcodes (0x0–0xF) implemented" },
+              { label: "Opcode table", desc: "Dispatched through a function-pointer table" },
+              { label: "ROM loading", desc: "Loaded into memory starting at 0x200" },
+              { label: "Fontset", desc: "Built-in font mapped at 0x50 for the FX29 opcode" },
+              { label: "Timers", desc: "Delay and sound timers decrement each cycle" },
+            ].map((f) => (
+              <div
+                key={f.label}
+                style={{ background: "var(--bg-surface)", border: "1px solid var(--border-color)", borderRadius: 8, padding: "1rem 1.1rem", marginTop: "1rem", transition: "border-color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--purple-border-hover)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
+              >
+                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: "var(--purple-tag-text)", marginBottom: "0.35rem" }}>{f.label}</div>
+                <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.6 }}>{f.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

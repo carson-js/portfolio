@@ -223,6 +223,35 @@ export default function CrumbClient() {
           </div>
         </div>
       </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+ 
+      {/* How It Works */}
+      <section className="two-col-section">
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-muted-light)", paddingTop: "0.4rem" }}>
+          How It Works
+        </span>
+        <div>
+          <h2 style={{ fontSize: "1.85rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1.25rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            Fetch, decode, execute
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "1rem", fontWeight: 300 }}>
+            Once a ROM is loaded, <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>main.c</span> drives
+            the emulation loop: poll input, run a CPU cycle, render the frame, repeat until the
+            window is closed.
+          </p>
+ 
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginTop: "1.5rem", fontWeight: 300 }}>
+            Each cycle,{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>cpuCycle()</span> fetches
+            the next 2-byte opcode from memory at{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>pc</span>, advances the
+            program counter, dispatches to the matching handler via{" "}
+            <span style={{ color: "var(--text-emphasis)", fontWeight: 400 }}>op_table </span> — indexed
+            by the opcode&apos;s top nibble — and ticks the delay/sound timers.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

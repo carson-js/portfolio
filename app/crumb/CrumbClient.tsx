@@ -285,6 +285,41 @@ export default function CrumbClient() {
           </div>
         </div>
       </section>
+
+      <hr style={{ borderColor: "var(--border-color)", margin: 0 }} />
+ 
+      {/* ── Planned ── */}
+      <section className="two-col-section">
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-muted-light)", paddingTop: "0.4rem" }}>
+          What&apos;s Next
+        </span>
+        <div>
+          <h2 style={{ fontSize: "1.85rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1.25rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            Planned features
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: "1rem", fontWeight: 300 }}>
+            Crumb is actively being developed. These two are next on the list.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {[
+              { token: "♪", label: "Audio beep", desc: "Play a tone while the sound timer is active" },
+              { token: "▸", label: "Debug mode", desc: "Step through opcodes and inspect registers" },
+            ].map((item, i, arr) => (
+              <div
+                key={item.label}
+                className="flex items-center gap-3"
+                style={{ padding: "0.65rem 0", borderBottom: i < arr.length - 1 ? "1px solid var(--border-color)" : "none" }}
+              >
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 13, color: "var(--purple-tag-text)", background: "var(--purple-tag-bg)", border: "1px solid var(--purple-tag-border)", borderRadius: 4, padding: "0.1rem 0.45rem", flexShrink: 0 }}>
+                  {item.token}
+                </span>
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 12.5, color: "var(--text-primary)", fontWeight: 500 }}>{item.label}</span>
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: "var(--text-muted-light)", marginLeft: "auto" }}>{item.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

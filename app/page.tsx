@@ -20,10 +20,10 @@ const projects = [
     num: "02",
   },
   {
-    title: "Plannerific",
-    description: "A school planner iOS app for managing assignments, schedules, and deadlines.",
-    tags: ["SwiftUI", "iOS", "SwiftData", "Live Activities"],
-    link: null,
+    title: "Crumb",
+    description: "A CHIP-8 emulator written in C from scratch, implementing the full fetch-decode-execute cycle with a function-pointer opcode table.",
+    tags: ["C", "CHIP-8", "Emulator", "Systems Programming"],
+    link: "/crumb",
     num: "03",
   },
 ]

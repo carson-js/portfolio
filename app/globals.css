@@ -301,3 +301,74 @@ body {
 @media (max-width: 540px) {
   .conch-features-grid { grid-template-columns: 1fr; }
 }
+
+/* Purple accent variables for the Crumb page */
+:root {
+  --purple: #9333ea;
+  --purple-tag-bg: rgba(147, 51, 234, 0.07);
+  --purple-tag-border: rgba(147, 51, 234, 0.18);
+  --purple-tag-text: #7e22ce;
+  --purple-border-hover: rgba(147, 51, 234, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --purple-tag-bg: rgba(147, 51, 234, 0.12);
+    --purple-tag-border: rgba(147, 51, 234, 0.25);
+    --purple-tag-text: #c084fc;
+    --purple-border-hover: rgba(147, 51, 234, 0.4);
+  }
+}
+
+/* Crumb hero — for when a screenshot is added later */
+.crumb-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+@media (max-width: 680px) {
+  .crumb-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}
+
+/* File tree */
+.crumb-file-tree {
+  margin-top: 1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.crumb-file-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 12.5px;
+}
+
+.crumb-file-row + .crumb-file-row {
+  border-top: 1px solid var(--border-color);
+}
+
+/* Features grid */
+.crumb-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 540px) {
+  .crumb-features-grid { grid-template-columns: 1fr; }
+}

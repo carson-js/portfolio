@@ -95,9 +95,9 @@ export default function Curb() {
           </div>
       </section>
 
-      {/* Features */}
-      <section id="features" className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
-        <p className="text-xs tracking-widest uppercase text-zinc-400 mb-16 text-center" style={{ fontFamily: "system-ui" }}>Features</p>
+      {/* What's New in 2.0 */}
+      <section id="whats-new" className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
+        <p className="text-xs tracking-widest uppercase text-zinc-400 mb-16 text-center" style={{ fontFamily: "system-ui" }}>New in 2.0</p>
 
         {/* One App, Every Device — image right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
@@ -110,21 +110,80 @@ export default function Curb() {
           </div>
           <div>
             <Image
-              src="/screenshots/multiplatform-devices-light.png"
-              alt="Curb running across iPhone, iPad, Mac, and Apple Watch"
+              src="/screenshots/homedetail-light.png"
+              alt="Curb bento-style car details view on iPad"
+              width={3000}
+              height={2300}
+              className="w-full max-w-md mx-auto dark:hidden"
+            />
+            <Image
+              src="/screenshots/homedetail-dark.png"
+              alt="Curb bento-style car details view on iPad"
+              width={3000}
+              height={2300}
+              className="w-full max-w-md mx-auto hidden dark:block"
+            />
+          </div>
+        </div>
+
+        {/* Every Entry, In Context — image left */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
+          <div>
+            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Fuel & Service</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Every Entry, In Context</h2>
+            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Fuel, charge, and service detail views now share one unified design, led by a map hero showing exactly where each entry happened. Curb still automatically calculates your fuel economy (MPG) or electric efficiency (mi/kWh), so you always know how your vehicle is performing.
+            </p>
+          </div>
+          <div className="md:order-first">
+            <Image
+              src="/screenshots/service-light.png"
+              alt="Curb redesigned fuel entry detail view with map hero"
               width={800}
               height={600}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/multiplatform-devices-dark.png"
-              alt="Curb running across iPhone, iPad, Mac, and Apple Watch"
+              src="/screenshots/service-dark.png"
+              alt="Curb redesigned fuel entry detail view with map hero"
               width={800}
               height={600}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
         </div>
+
+        {/* Find Anything, Fast — image right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
+          <div>
+            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>History</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Find Anything, Fast</h2>
+            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Fuel, charge, and service history are now grouped into month sections with a search bar to jump straight to any entry. Your car list can be sorted too, so the vehicle you need is always within reach.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/screenshots/fuelhistory-light.png"
+              alt="Curb history view grouped by month with search bar"
+              width={800}
+              height={600}
+              className="w-64 h-auto mx-auto dark:hidden"
+            />
+            <Image
+              src="/screenshots/fuelhistory-dark.png"
+              alt="Curb history view grouped by month with search bar"
+              width={800}
+              height={600}
+              className="w-64 h-auto mx-auto hidden dark:block"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
+        <p className="text-xs tracking-widest uppercase text-zinc-400 mb-16 text-center" style={{ fontFamily: "system-ui" }}>Features</p>
 
         {/* Your Whole Garage, One Glance — image left */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
@@ -152,61 +211,6 @@ export default function Curb() {
             />
           </div>
         </div>
-
-        {/* Every Entry, In Context — image right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
-          <div>
-            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Fuel & Service</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Every Entry, In Context</h2>
-            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Fuel, charge, and service detail views now share one unified design, led by a map hero showing exactly where each entry happened. Curb still automatically calculates your fuel economy (MPG) or electric efficiency (mi/kWh), so you always know how your vehicle is performing.
-            </p>
-          </div>
-          <div>
-            <Image
-              src="/screenshots/service-light.png"
-              alt="Curb redesigned fuel entry detail view with map hero"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto dark:hidden"
-            />
-            <Image
-              src="/screenshots/service-dark.png"
-              alt="Curb redesigned fuel entry detail view with map hero"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto hidden dark:block"
-            />
-          </div>
-        </div>
-
-        {/* Find Anything, Fast — image left */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
-          <div>
-            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>History</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Find Anything, Fast</h2>
-            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Fuel, charge, and service history are now grouped into month sections with a search bar to jump straight to any entry. Your car list can be sorted too, so the vehicle you need is always within reach.
-            </p>
-          </div>
-          <div className="md:order-first">
-            <Image
-              src="/screenshots/history-search-light.png"
-              alt="Curb history view grouped by month with search bar"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto dark:hidden"
-            />
-            <Image
-              src="/screenshots/history-search-dark.png"
-              alt="Curb history view grouped by month with search bar"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto hidden dark:block"
-            />
-          </div>
-        </div>
-
 
         {/* Reminders — image right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">

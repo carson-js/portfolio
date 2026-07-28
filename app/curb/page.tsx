@@ -81,7 +81,7 @@ export default function Curb() {
               alt="Curb running on iPhone, iPad, Mac, and Apple Watch"
               width={1600}
               height={1000}
-              className="max-w-2xl w-full h-auto mx-auto dark:hidden"
+              className="max-w-3xl w-full h-auto mx-auto dark:hidden"
               priority
             />
             <Image
@@ -89,7 +89,7 @@ export default function Curb() {
               alt="Curb running on iPhone, iPad, Mac, and Apple Watch"
               width={1600}
               height={1000}
-              className="max-w-2xl w-full h-auto mx-auto hidden dark:block"
+              className="max-w-3xl w-full h-auto mx-auto hidden dark:block"
               priority
             />
           </div>

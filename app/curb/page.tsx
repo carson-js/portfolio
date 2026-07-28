@@ -79,16 +79,18 @@ export default function Curb() {
             <Image
               src="/screenshots/hero-multiplatform-light.png"
               alt="Curb running on iPhone, iPad, Mac, and Apple Watch"
-              width={1600}
-              height={1000}
+              width={3200}
+              height={2000}
+              quality={95}
               className="max-w-3xl w-full h-auto mx-auto dark:hidden"
               priority
             />
             <Image
               src="/screenshots/hero-multiplatform-dark.png"
               alt="Curb running on iPhone, iPad, Mac, and Apple Watch"
-              width={1600}
-              height={1000}
+              width={3200}
+              height={2000}
+              quality={95}
               className="max-w-3xl w-full h-auto mx-auto hidden dark:block"
               priority
             />
@@ -139,15 +141,15 @@ export default function Curb() {
             <Image
               src="/screenshots/service-light.png"
               alt="Curb redesigned fuel entry detail view with map hero"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/service-dark.png"
               alt="Curb redesigned fuel entry detail view with map hero"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -166,15 +168,15 @@ export default function Curb() {
             <Image
               src="/screenshots/fuelhistory-light.png"
               alt="Curb history view grouped by month with search bar"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/fuelhistory-dark.png"
               alt="Curb history view grouped by month with search bar"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -198,15 +200,15 @@ export default function Curb() {
             <Image
               src="/screenshots/detail-light.png"
               alt="Curb redesigned car details screen with map snapshot and vehicle info cards"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/detail-dark.png"
               alt="Curb redesigned car details screen with map snapshot and vehicle info cards"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -225,15 +227,15 @@ export default function Curb() {
             <Image
               src="/screenshots/reminders-light.png"
               alt="Lock screen highlighting Curb reminder notification"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/reminders-dark.png"
               alt="Lock screen highlighting Curb reminder notification"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -252,15 +254,15 @@ export default function Curb() {
             <Image
               src="/screenshots/ev-light.png"
               alt="Curb ev detail screen"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/ev-dark.png"
               alt="Curb ev detail screen"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -279,15 +281,15 @@ export default function Curb() {
             <Image
               src="/screenshots/map-light.png"
               alt="Curb fuel map tagging view"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/map-dark.png"
               alt="Curb fuel map tagging view"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>

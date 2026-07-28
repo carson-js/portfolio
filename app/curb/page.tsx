@@ -130,21 +130,21 @@ export default function Curb() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Car Details</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Your Whole Garage, One Glance</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Every detail, organized.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               The car details screen has been redesigned from the ground up: a map snapshot card shows where you last drove, and a new vehicle info card keeps your VIN, insurance, registration, and license plate on hand. On iPad and Mac, a bento-style layout puts it all in view at once.
             </p>
           </div>
           <div className="md:order-first">
             <Image
-              src="/screenshots/bento-view-light.png"
+              src="/screenshots/detail-light.png"
               alt="Curb redesigned car details screen with map snapshot and vehicle info cards"
               width={800}
               height={600}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/bento-view-dark.png"
+              src="/screenshots/detail-dark.png"
               alt="Curb redesigned car details screen with map snapshot and vehicle info cards"
               width={800}
               height={600}
@@ -164,14 +164,14 @@ export default function Curb() {
           </div>
           <div>
             <Image
-              src="/screenshots/entry-detail-map-light.png"
+              src="/screenshots/service-light.png"
               alt="Curb redesigned fuel entry detail view with map hero"
               width={800}
               height={600}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/entry-detail-map-dark.png"
+              src="/screenshots/service-dark.png"
               alt="Curb redesigned fuel entry detail view with map hero"
               width={800}
               height={600}
@@ -207,38 +207,12 @@ export default function Curb() {
           </div>
         </div>
 
-        {/* AI Receipt Scanning — image left */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
-          <div>
-            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Apple Intelligence</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>AI-Powered Receipt Scanning</h2>
-            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Let AI do the data entry. Powered by Apple Intelligence. Snap a photo of any receipt, and Curb's on-device vision models will instantly extract the date, cost, and totals for you.
-            </p>
-          </div>
-          <div className="md:order-first">
-            <Image
-              src="/screenshots/receipt-scanning-light.png"
-              alt="Curb add service view highlighting receipt scanning feature"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto dark:hidden"
-            />
-            <Image
-              src="/screenshots/receipt-scanning-dark.png"
-              alt="Curb add service view highlighting receipt scanning feature"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto hidden dark:block"
-            />
-          </div>
-        </div>
 
         {/* Reminders — image right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Reminders</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Maintenance That Tracks With You</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Reminders that meet you there.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Never miss an oil change or tire rotation again. Set reminders based on specific dates or mileage intervals. Curb watches your odometer so you don't have to.
             </p>
@@ -265,21 +239,21 @@ export default function Curb() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>EV Ready</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Gas or Electric. We Speak Both.</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Gas or Electric, We Speak Both.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Curb is built for the modern garage. Toggle EV mode to switch from gallons to kilowatt-hours, giving you accurate efficiency metrics for your electric vehicles.
             </p>
           </div>
           <div className="md:order-first">
             <Image
-              src="/screenshots/ev-ready-light.png"
+              src="/screenshots/ev-light.png"
               alt="Curb ev detail screen"
               width={800}
               height={600}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/ev-ready-dark.png"
+              src="/screenshots/ev-dark.png"
               alt="Curb ev detail screen"
               width={800}
               height={600}
@@ -292,21 +266,21 @@ export default function Curb() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Map View</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Your Journey, on the Map.</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Your Journey, On the Map.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Every fuel and service entry can be tagged with a location. View your entire history on an interactive map to see exactly where you've been and where you've serviced your car.
             </p>
           </div>
           <div>
             <Image
-              src="/screenshots/map-view-light.png"
+              src="/screenshots/map-light.png"
               alt="Curb fuel map tagging view"
               width={800}
               height={600}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/map-view-dark.png"
+              src="/screenshots/map-dark.png"
               alt="Curb fuel map tagging view"
               width={800}
               height={600}
@@ -326,7 +300,7 @@ export default function Curb() {
               { label: "SwiftData", desc: "Pure Swift persistence for a fast, responsive UI." },
               { label: "Multiplatform SwiftUI", desc: "One codebase, native on iPhone, iPad, Mac & Watch." },
               { label: "Built for Scale", desc: "Optimized storage and querying — handles large histories and backfilled entries smoothly." },
-              { label: "Apple Intelligence", desc: "Leveraging local CoreML and Vision frameworks for secure OCR." },
+              { label: "Apple Intelligence", desc: "On-device CoreML and Vision models scan receipts to auto-fill fuel and service entries." },
               { label: "Haptic Feedback", desc: "Subtle haptics on iPhone for key actions." },
               { label: "Your Units", desc: "Toggle between imperial and metric units anytime." },
             ].map((item) => (

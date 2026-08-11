@@ -40,7 +40,7 @@ export default function Curb() {
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pt-20 pb-20 text-center">
         <div className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-widest uppercase text-red-500 bg-red-500/10 dark:bg-red-500/10 px-2.5 py-1 rounded-full mb-5" style={{ fontFamily: "system-ui" }}>
-          📱 iOS App
+          📱💻⌚ Now on iPhone, iPad, Mac &amp; Watch
         </div>
         <Image
           src="/curb-icon-light.png"
@@ -62,7 +62,7 @@ export default function Curb() {
           Curb: Your Garage,<br />Digitized.
         </h1>
         <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed">
-          A clean, private way to track maintenance, fuel, and efficiency. No ads, no tracking, just utility.
+          A clean, private way to track maintenance, fuel, and efficiency — now synced everywhere via iCloud. No ads, no tracking, just utility.
         </p>
         <a
           href="https://apps.apple.com/us/app/curb-your-garage-digitized/id6763365112"
@@ -77,75 +77,138 @@ export default function Curb() {
         </a>
         <div className="pt-10">
             <Image
-              src="/screenshots/home-screen-light.png"
-              alt="Curb home screen"
-              width={800}
-              height={600}
+              src="/screenshots/hero-multiplatform-light.png"
+              alt="Curb running on iPhone, iPad, Mac, and Apple Watch"
+              width={3200}
+              height={2000}
+              quality={95}
+              className="max-w-3xl w-full h-auto mx-auto dark:hidden"
+              priority
+            />
+            <Image
+              src="/screenshots/hero-multiplatform-dark.png"
+              alt="Curb running on iPhone, iPad, Mac, and Apple Watch"
+              width={3200}
+              height={2000}
+              quality={95}
+              className="max-w-3xl w-full h-auto mx-auto hidden dark:block"
+              priority
+            />
+          </div>
+      </section>
+
+      {/* What's New in 2.0 */}
+      <section id="whats-new" className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
+        <p className="text-xs tracking-widest uppercase text-zinc-400 mb-16 text-center" style={{ fontFamily: "system-ui" }}>New in 2.0</p>
+
+        {/* One App, Every Device — image right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
+          <div>
+            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Multiplatform</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>One App, Every Device</h2>
+            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Curb is now a fully native experience on iPhone, iPad, Mac, and Apple Watch. Log an entry on your phone and see it instantly on your Mac — everything stays in sync via your own iCloud account.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/screenshots/homedetail-light.png"
+              alt="Curb bento-style car details view on iPad"
+              width={3000}
+              height={2300}
+              className="w-full max-w-md mx-auto dark:hidden"
+            />
+            <Image
+              src="/screenshots/homedetail-dark.png"
+              alt="Curb bento-style car details view on iPad"
+              width={3000}
+              height={2300}
+              className="w-full max-w-md mx-auto hidden dark:block"
+            />
+          </div>
+        </div>
+
+        {/* Every Entry, In Context — image left */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
+          <div>
+            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Fuel & Service</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Every Entry, In Context</h2>
+            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Fuel, charge, and service detail views now share one unified design, led by a map hero showing exactly where each entry happened. Curb still automatically calculates your fuel economy (MPG) or electric efficiency (mi/kWh), so you always know how your vehicle is performing.
+            </p>
+          </div>
+          <div className="md:order-first">
+            <Image
+              src="/screenshots/service-light.png"
+              alt="Curb redesigned fuel entry detail view with map hero"
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/home-screen-dark.png"
-              alt="Curb home screen"
-              width={800}
-              height={600}
+              src="/screenshots/service-dark.png"
+              alt="Curb redesigned fuel entry detail view with map hero"
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
+        </div>
+
+        {/* Find Anything, Fast — image right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
+          <div>
+            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>History</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Find Anything, Fast</h2>
+            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Fuel, charge, and service history are now grouped into month sections with a search bar to jump straight to any entry. Your car list can be sorted too, so the vehicle you need is always within reach.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/screenshots/fuelhistory-light.png"
+              alt="Curb history view grouped by month with search bar"
+              width={1470}
+              height={3000}
+              className="w-64 h-auto mx-auto dark:hidden"
+            />
+            <Image
+              src="/screenshots/fuelhistory-dark.png"
+              alt="Curb history view grouped by month with search bar"
+              width={1470}
+              height={3000}
+              className="w-64 h-auto mx-auto hidden dark:block"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Features */}
       <section id="features" className="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-800">
         <p className="text-xs tracking-widest uppercase text-zinc-400 mb-16 text-center" style={{ fontFamily: "system-ui" }}>Features</p>
 
-        {/* Effortless Logging — image right */}
+        {/* Your Whole Garage, One Glance — image left */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
-            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Fuel & Service</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Effortless Logging</h2>
+            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Car Details</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Every detail, organized.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Track every drop and every wrench turn. Log fuel entries or service records in seconds. Curb automatically calculates your fuel economy (MPG) or electric efficiency (mi/kWh), so you always know how your vehicle is performing.
-            </p>
-          </div>
-          <div>
-            <Image
-              src="/screenshots/detail-view-light.png"
-              alt="Curb car detail screen"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto dark:hidden"
-            />
-            <Image
-              src="/screenshots/detail-view-dark.png"
-              alt="Curb car detail screen"
-              width={800}
-              height={600}
-              className="w-64 h-auto mx-auto hidden dark:block"
-            />
-          </div>
-        </div>
-
-        {/* AI Receipt Scanning — image left */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
-          <div>
-            <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Apple Intelligence</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>AI-Powered Receipt Scanning</h2>
-            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Let AI do the data entry. Powered by Apple Intelligence. Snap a photo of any receipt, and Curb's on-device vision models will instantly extract the date, cost, and totals for you.
+              The car details screen has been redesigned from the ground up: a map snapshot card shows where you last drove, and a new vehicle info card keeps your VIN, insurance, registration, and license plate on hand. On iPad and Mac, a bento-style layout puts it all in view at once.
             </p>
           </div>
           <div className="md:order-first">
             <Image
-              src="/screenshots/receipt-scanning-light.png"
-              alt="Curb add service view highlighting receipt scanning feature"
-              width={800}
-              height={600}
+              src="/screenshots/detail-light.png"
+              alt="Curb redesigned car details screen with map snapshot and vehicle info cards"
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/receipt-scanning-dark.png"
-              alt="Curb add service view highlighting receipt scanning feature"
-              width={800}
-              height={600}
+              src="/screenshots/detail-dark.png"
+              alt="Curb redesigned car details screen with map snapshot and vehicle info cards"
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -155,7 +218,7 @@ export default function Curb() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Reminders</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Maintenance That Tracks With You</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Reminders that meet you there.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Never miss an oil change or tire rotation again. Set reminders based on specific dates or mileage intervals. Curb watches your odometer so you don't have to.
             </p>
@@ -164,15 +227,15 @@ export default function Curb() {
             <Image
               src="/screenshots/reminders-light.png"
               alt="Lock screen highlighting Curb reminder notification"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
               src="/screenshots/reminders-dark.png"
               alt="Lock screen highlighting Curb reminder notification"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -182,24 +245,24 @@ export default function Curb() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>EV Ready</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Gas or Electric. We Speak Both.</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Gas or Electric, We Speak Both.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Curb is built for the modern garage. Toggle EV mode to switch from gallons to kilowatt-hours, giving you accurate efficiency metrics for your electric vehicles.
             </p>
           </div>
           <div className="md:order-first">
             <Image
-              src="/screenshots/ev-ready-light.png"
+              src="/screenshots/ev-light.png"
               alt="Curb ev detail screen"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/ev-ready-dark.png"
+              src="/screenshots/ev-dark.png"
               alt="Curb ev detail screen"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -209,24 +272,24 @@ export default function Curb() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
           <div>
             <span className="text-xs tracking-widest uppercase text-red-500 mb-4 block" style={{ fontFamily: "system-ui" }}>Map View</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Your Journey, on the Map.</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ letterSpacing: "-0.02em" }}>Your Journey, On the Map.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Every fuel and service entry can be tagged with a location. View your entire history on an interactive map to see exactly where you've been and where you've serviced your car.
             </p>
           </div>
           <div>
             <Image
-              src="/screenshots/map-view-light.png"
+              src="/screenshots/map-light.png"
               alt="Curb fuel map tagging view"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto dark:hidden"
             />
             <Image
-              src="/screenshots/map-view-dark.png"
+              src="/screenshots/map-dark.png"
               alt="Curb fuel map tagging view"
-              width={800}
-              height={600}
+              width={1470}
+              height={3000}
               className="w-64 h-auto mx-auto hidden dark:block"
             />
           </div>
@@ -241,8 +304,11 @@ export default function Curb() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { label: "SwiftData", desc: "Pure Swift persistence for a fast, responsive UI." },
-              { label: "Apple Intelligence", desc: "Leveraging local CoreML and Vision frameworks for secure OCR." },
-              { label: "Native SwiftUI", desc: "A 100% native experience optimized for iOS 18 & 26." },
+              { label: "Multiplatform SwiftUI", desc: "One codebase, native on iPhone, iPad, Mac & Watch." },
+              { label: "Built for Scale", desc: "Optimized storage and querying — handles large histories and backfilled entries smoothly." },
+              { label: "Apple Intelligence", desc: "On-device CoreML and Vision models scan receipts to auto-fill fuel and service entries." },
+              { label: "Haptic Feedback", desc: "Subtle haptics on iPhone for key actions." },
+              { label: "Your Units", desc: "Toggle between imperial and metric units anytime." },
             ].map((item) => (
               <div key={item.label} className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6">
                 <div className="w-2 h-2 rounded-full bg-red-500 mb-4" />
@@ -261,7 +327,7 @@ export default function Curb() {
           <h2 className="text-4xl font-bold text-center mb-16" style={{ letterSpacing: "-0.02em" }}>Your Data Stays Yours.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { label: "On-Device Processing", desc: "Curb has no servers. Your location, receipts, and vehicle data never leave your iPhone." },
+              { label: "Private by Design", desc: "Curb has no servers of its own. Your location, receipts, and vehicle data sync privately across your devices through your personal iCloud account — never to a third party." },
               { label: "No Tracking", desc: "Zero analytics. Zero ads. Zero third-party SDKs." },
               { label: "Full Portability", desc: "Export your entire database to a standard .json file at any time. You aren't just a user; you're the owner." },
             ].map((item) => (

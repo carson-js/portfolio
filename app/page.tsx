@@ -7,8 +7,8 @@ import Image from "next/image";
 const projects = [
   {
     title: "Curb",
-    description: "A car management app for tracking maintenance, costs, and vehicle info.",
-    tags: ["SwiftUI", "Swift", "SwiftData", "iOS"],
+    description: "A car management app for tracking maintenance, costs, and vehicle info — now on iPhone, iPad, Mac, and Apple Watch.",
+    tags: ["SwiftUI", "Swift", "SwiftData", "Multiplatform"],
     link: "/curb",
     num: "01",
   },

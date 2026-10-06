@@ -348,8 +348,7 @@ export default function Home() {
           <div style={{ display: "flex", gap: "2.5rem", marginTop: "2rem", flexWrap: "wrap" }}>
             {[
               { num: "4.0", label: "GPA" },
-              { num: "2", label: "iOS apps" },
-              { num: "May 2029", label: "Graduation" },
+              { num: "December 2028", label: "Graduation" },
             ].map(({ num, label }) => (
               <div key={label}>
                 <span
